@@ -1,0 +1,28 @@
+@import "@/styles/theme/theme";
+@import "src/styles/_media_queries.scss";
+
+.anchor {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $brown;
+  }
+
+  @include respond-width($m) {
+    transform: scale(0.8);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 25px 23px;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
+.circleAround {
+  position: absolute;
+  stroke: currentColor;
+}

@@ -1,0 +1,31 @@
+$xl: 1650px;
+$l: 1280px;
+$m: 1100px;
+$s: 800px;
+$xs: 550px;
+// min: 375px;
+
+
+
+// @import 'src/styles/_media_queries.scss';
+// ...
+// @include respond-width($m) {
+@mixin respond-width($media) {
+    $max-width: $media + 1px;
+
+    @media (max-width: #{$max-width}) {
+        @content;
+    }
+}
+
+// .main {
+//     margin: 150px auto 200px;
+
+//     @include respond-width($m) {
+//         margin: 150px auto 150px;
+//     }
+
+//     @include respond-width($s) {
+//         margin: 100px auto;
+//     }
+// }

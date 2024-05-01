@@ -1,0 +1,103 @@
+@import "@/styles/theme/theme";
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 1fr));
+  justify-items: center;
+
+  @include respond-width($m) {
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 100px);
+    column-gap: 20px;
+  }
+
+  @include respond-width($xs) {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.option {
+  max-width: 350px;
+  cursor: pointer;
+}
+
+.selected:hover h3 {
+  color: $brown;
+}
+
+.numeric {
+  font-family: IvyMode;
+  font-size: 47px;
+  font-weight: 400;
+  line-height: 47.62px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $black;
+}
+
+.preview {
+  display: flex;
+  gap: 16px;
+  height: 110px;
+  padding-top: 30px;
+}
+
+.smallImgFrame {
+  min-width: 80px;
+  aspect-ratio: 1/1;
+  position: relative;
+
+  @include respond-width($m) {
+    min-width: 100px;
+  }
+}
+
+.smallImg {
+  object-fit: cover;
+}
+
+.textSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 0;
+  width: 250px;
+
+  @include respond-width($m) {
+    display: none;
+  }
+}
+
+.categorySpan:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  display: inline-block;
+  margin: 2px 4px;
+  border-radius: 50%;
+  background-color: $black;
+}
+
+.categorySpan:last-of-type:after {
+  display: none;
+}
+
+.title {
+  @include simpleTransition;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
+
+  line-height: 100%;
+}
+
+.selected {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.notSelected {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}

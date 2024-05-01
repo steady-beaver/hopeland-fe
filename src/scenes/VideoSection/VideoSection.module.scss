@@ -1,0 +1,11 @@
+@import "@/styles/theme/theme";
+
+.frame {
+  margin: 200px auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  @include respond-width($s) {
+    margin: 150px auto;
+  }
+}

@@ -1,0 +1,198 @@
+@import "src/styles/_media_queries.scss";
+
+$font-family-default: Menlo, Monaco, Lucida Console, Liberation Mono,
+  DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+
+.headingHero {
+  font-family: ivymode;
+  font-size: 170px;
+  font-weight: 400;
+  line-height: 252px;
+  letter-spacing: 0.2em;
+}
+
+// helper
+// className={`${''} headingH1`}
+
+// @include simpleTransition;
+
+.headingH1 {
+  font-family: ivymode, sans-serif;
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 136px;
+  letter-spacing: 0.2em;
+
+  @include respond-width($m) {
+    font-size: 70px;
+    line-height: 60px;
+  }
+
+  @include respond-width($s) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.headingH2 {
+  font-family: ivymode;
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: 0.05em;
+}
+
+.headingH3 {
+  font-family: ivymode;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0.05em;
+
+  @include respond-width($s) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.headingH4 {
+  font-family: Reem Kufi Fun;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+}
+
+.headingH5 {
+  content: none;
+}
+
+.headingH6 {
+  content: none;
+  //styleName: Subtitle;
+}
+
+// helper
+// className={`${''} headingH3`}
+
+// @include simpleTransition;
+
+// probably not used
+//styleName: Secondary menu items;
+.subtitleStrong {
+  font-family: Reem Kufi Fun;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.37em;
+}
+
+//styleName: Subtitle;
+.subtitle {
+  font-family: Reem Kufi Fun;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.2em;
+
+  @include respond-width($s) {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+//styleName: Input items;
+.subtitleSmall {
+  font-family: basic-sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.22em;
+}
+
+//styleName: Meta;
+.subtitleTiny {
+  font-family: basic-sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.2em;
+}
+
+// helper       placeholder
+// className={`${''} headingH3`}
+
+// @import "@/styles/theme/theme";
+
+//styleName: Pargraph;
+.text {
+  font-family: basic-sans;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0em;
+
+  @include respond-width($s) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.textS {
+  //styleName: Link !?;
+  font-family: basic-sans;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+.textXS {
+  //styleName: Paragraph XSmall;
+  font-family: basic-sans;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.textXXS {
+  //styleName: Paragraph XXSmall;
+  font-family: basic-sans;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 12px;
+}
+
+.signature {
+  font-family: "Allison", cursive;
+  font-size: 64px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// helpers
+.vertical {
+  text-transform: uppercase;
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-50%);
+  width: max-content;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.letterSpacing {
+  letter-spacing: 2px;
+}
+
+.centered {
+  text-align: center;
+}

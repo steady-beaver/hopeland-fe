@@ -1,0 +1,33 @@
+@import "@/styles/theme/theme";
+
+.main {
+  width: 100%;
+
+  @include respond-width($m) {
+    width: 350px;
+  }
+
+  @include respond-width($xs) {
+    width: 300px;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+
+  @include respond-width($xs) {
+    margin-bottom: 20px;
+  }
+}
+
+.item {
+  border-bottom: 1px solid $black;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+
+  &:hover {
+    color: $brown;
+    border-bottom: 1px solid $brown;
+  }
+}

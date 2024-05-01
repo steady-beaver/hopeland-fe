@@ -1,0 +1,34 @@
+@import "@/styles/theme/theme";
+
+.main {
+  max-width: 330px;
+  // padding: 0 10px 40px;
+  text-align: center;
+
+  @include respond-width($m) {
+    max-width: 250px;
+  }
+}
+
+.customSmallFont {
+  @include respond-width($xs) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.ornament {
+  height: 150px;
+  background-image: url("/ornaments/info-plant.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.extra {
+  width: 75%;
+  margin: 18px auto 0;
+}

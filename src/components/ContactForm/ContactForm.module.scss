@@ -1,0 +1,100 @@
+@import "@/styles/theme/theme";
+
+.main {
+  max-width: 650px;
+  margin: 0 auto 200px;
+
+  @include respond-width($s) {
+    padding: 50px;
+    max-width: 100%;
+    margin: 0 auto 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include respond-width($s) {
+      gap: 40px;
+    }
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-width($s) {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+
+    input,
+    textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $black;
+
+      font-family: basic-sans;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 16px;
+      letter-spacing: 2px;
+
+      @include respond-width($s) {
+        width: 100% !important;
+      }
+    }
+
+    input[name="name"] {
+      width: 100%;
+    }
+
+    input[name="email"] {
+      width: 45%;
+    }
+
+    input[name="phone"] {
+      width: 45%;
+    }
+
+    input[name="month"] {
+      width: 45%;
+    }
+
+    input[name="source"] {
+      width: 45%;
+    }
+
+    input[name="clientInstagram"] {
+      width: 45%;
+    }
+
+    textarea[name="message"] {
+      width: 100%;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  @include respond-width($s) {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+
+  & > span {
+    @include respond-width($s) {
+      text-align: center;
+      width: 200px;
+    }
+  }
+}
+
+.policy {
+  text-decoration: underline;
+}

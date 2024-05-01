@@ -1,0 +1,163 @@
+@import "@/styles/theme/theme";
+
+.main {
+  margin: 200px auto;
+
+  max-width: 1100px;
+  @include respond-width($s) {
+    margin: 150px auto;
+  }
+}
+
+.header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 50px;
+
+  .title {
+    padding: 0 25px;
+    margin-bottom: 25px;
+  }
+
+  .text {
+    padding: 0 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.timelineFrame {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: $brown-light;
+  left: 50%;
+  top: 0;
+  @include respond-width($xs) {
+    left: 5%;
+  }
+}
+
+.chapter {
+  width: 50%;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include respond-width($s) {
+    padding: 0 25px;
+  }
+
+  @include respond-width($xs) {
+    width: 95%;
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    top: 30px;
+    background-color: $brown-light;
+    position: absolute;
+    @include respond-width($xs) {
+      width: 15px;
+    }
+  }
+
+  &:nth-child(even) {
+    align-self: flex-end;
+    align-items: flex-start;
+    &::after {
+      left: 0;
+    }
+    .imgFrame {
+      transform: rotate(-3deg);
+    }
+  }
+
+  &:nth-child(odd) {
+    align-items: flex-end;
+    text-align: end;
+    &::after {
+      right: 0;
+    }
+
+    .imgFrame {
+      transform: rotate(3deg);
+    }
+
+    @include respond-width($xs) {
+      text-align: start;
+      align-items: flex-start;
+      align-self: flex-end;
+      &::after {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  .year {
+    font-weight: bold;
+    color: $brown-light;
+  }
+
+  .imgFrame {
+    max-width: 90%;
+    width: 400px;
+    aspect-ratio: 4 / 3;
+    margin: 20px;
+    position: relative;
+
+    @include respond-width($xs) {
+      max-height: 160px;
+    }
+
+    .image {
+      height: 100%;
+      object-fit: cover;
+      @include respond-width($xs) {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ornament {
+  position: absolute;
+  @include respond-width($xs) {
+    width: 30px;
+  }
+}
+
+.chapter_3 .ornament {
+  width: 10%;
+
+  right: 4%;
+  bottom: 89%;
+  @include respond-width($xs) {
+    right: 45px;
+  }
+}
+
+.chapter_4 .ornament {
+  width: 15%;
+  left: 37%;
+  bottom: 84%;
+  transform: rotate(15deg);
+  @include respond-width($xs) {
+    left: 33%;
+  }
+}

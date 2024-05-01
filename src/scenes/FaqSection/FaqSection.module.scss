@@ -1,0 +1,49 @@
+@import 'src/styles/_media_queries.scss';
+
+.main {
+    max-width: 1100px;
+    margin: 100px auto;
+
+    @include respond-width($m) {
+        padding: 0 20px;
+    }
+
+    @include respond-width($xs) {
+        padding: 0 0;
+    }
+}
+
+.header {
+    text-align: center;
+
+    @include respond-width($m) {
+        padding: 0 50px;
+    }
+
+    &>*:last-child {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    &>*:first-child,
+    &>*:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 40px;
+    column-gap: 20px;
+
+    @include respond-width($s) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 12px;
+    }
+
+    @include respond-width($s) {
+        gap: 10px;
+    }
+}

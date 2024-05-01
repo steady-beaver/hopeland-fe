@@ -1,0 +1,118 @@
+@import "@/styles/theme/theme";
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 45px;
+  color: $white;
+  position: relative;
+
+  & svg {
+    cursor: pointer;
+  }
+
+  .imageBg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("/pictures/desktop-nav-bg-low.jpg") no-repeat center center
+      fixed;
+    background-size: cover;
+    z-index: 1000;
+    filter: grayscale(100%);
+  }
+
+  .blackFilter {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.88);
+    z-index: 2000;
+  }
+
+  .openedMenu {
+    color: $white;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    // background-color: #f9662c;
+    // opacity: 0.8;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    span {
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    span::after {
+      content: "";
+      display: block;
+      height: 5px;
+      position: absolute;
+      width: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-size: 100px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("/ornaments/item-underline.svg");
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    span:hover {
+      color: $brown-light;
+    }
+
+    span:hover::after {
+      opacity: 1;
+    }
+
+    .social {
+      position: absolute;
+      bottom: 5%;
+      display: flex;
+      gap: 26px;
+    }
+  }
+
+  .closeIcon {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    fill: $brown-dark;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $brown-light;
+    }
+  }
+
+  .iconBg {
+    fill: $brown-dark;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $brown-light;
+    }
+  }
+
+  .hamburgerIcon {
+    fill: $black;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $brown-dark;
+    }
+  }
+}

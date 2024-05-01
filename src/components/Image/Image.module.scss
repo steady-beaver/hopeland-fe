@@ -1,0 +1,18 @@
+@import "@/styles/theme/theme";
+
+.image {
+  div {
+    overflow: hidden;
+    margin: 0;
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "@/styles/theme/theme";
+
+.sendBtn {
+  width: 160px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid $black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  @include respond-width($m) {
+    width: 100px;
+    height: 40px;
+  }
+
+  @include respond-width($xs) {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  &:focus {
+    border-width: 2px;
+  }
+
+  &:hover {
+    color: $brown;
+    border-color: $brown;
+  }
+
+  &[disabled] {
+    border-color: $gray;
+    color: $gray;
+  }
+}

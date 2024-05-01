@@ -1,0 +1,178 @@
+@import "@/styles/theme/theme";
+
+.main {
+  border-top: 1px solid $black;
+  height: 600px;
+  padding: 50px 50px 70px;
+
+  @include respond-width($m) {
+    height: auto;
+    padding: 50px;
+  }
+}
+
+.upperPart {
+  display: flex;
+
+  @include respond-width($m) {
+    flex-direction: column;
+    align-items: center;
+    // justify-content: stretch;
+    gap: 60px;
+  }
+}
+
+.newsletter {
+  flex: 0 0 60%;
+
+  @include respond-width($m) {
+    flex: auto;
+  }
+
+  .container {
+    max-width: 580px;
+    padding-right: 30px;
+
+    @include respond-width($m) {
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+}
+
+.footerCol {
+  flex: 1;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 135px;
+
+  @include respond-width($m) {
+    gap: 50px;
+    padding-top: 50px;
+  }
+
+  @include respond-width($s) {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  & ul {
+    list-style-type: none;
+
+    & li {
+      margin: 12px 0;
+      color: inherit;
+
+      & a:hover {
+        transition: all 0.2s ease;
+        color: $brown;
+      }
+    }
+  }
+}
+
+.newsletterInput {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-top: 50px;
+    margin-bottom: 32px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+
+    @include respond-width($xs) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sendBtn {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid $black;
+    background-color: transparent;
+    flex: 1;
+
+    &:focus {
+      transition: all 0.3s ease;
+      border-color: $brown;
+      border-width: 2px;
+    }
+
+    @include respond-width($xs) {
+      width: 100%;
+    }
+  }
+
+  .helper {
+    margin-top: 16px;
+    text-align: left;
+
+    @include respond-width($xs) {
+      text-align: center;
+    }
+  }
+}
+
+.bottomPart {
+  padding: 70px 0 0;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-width($s) {
+    padding: 20px 0 0;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rights {
+    position: relative;
+    bottom: -2px;
+
+    @include respond-width($xs) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  .rights > span:first-child {
+    margin-right: 30px;
+
+    @include respond-width($xs) {
+      margin-right: 0;
+    }
+  }
+
+  .iconBg {
+    fill: $black;
+
+    &:hover {
+      transition: all 0.3s ease;
+      fill: $brown;
+    }
+  }
+
+  .media {
+    display: flex;
+    gap: 10px;
+  }
+}

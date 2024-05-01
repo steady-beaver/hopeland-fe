@@ -1,0 +1,88 @@
+@import "@/styles/theme/theme";
+
+.main {
+  margin: 200px auto;
+
+  @include respond-width($s) {
+    margin: 150px auto;
+  }
+
+  .textFrame {
+    max-width: 660px;
+    width: 80%;
+    margin: 0 auto 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    text-align: center;
+
+    @include respond-width($s) {
+      gap: 20px;
+    }
+
+    .text {
+      @include respond-width($xs) {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+
+    .link {
+      @include simpleTransition;
+
+      &:hover {
+        color: $brown;
+        cursor: pointer;
+      }
+
+      @include respond-width($xs) {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .imgCanvas {
+    width: 100%;
+    height: 50vw;
+    max-height: 700px;
+    position: relative;
+
+    .primaryImg {
+      width: 42%;
+      aspect-ratio: 3/2;
+      position: absolute;
+      transform: rotate(-6deg);
+      top: 16%;
+      left: 15%;
+      z-index: 3;
+    }
+
+    .imageSrc {
+      object-fit: cover;
+    }
+
+    .secondaryImg {
+      width: 25%;
+      aspect-ratio: 1/1.4;
+      position: absolute;
+      transform: rotate(11deg);
+      right: 22%;
+      top: 15%;
+      z-index: 2;
+    }
+
+    .travelFlower {
+      width: 35%;
+      position: absolute;
+      transform: rotate(13deg);
+      top: 30%;
+      right: 9%;
+      z-index: 1;
+    }
+  }
+}

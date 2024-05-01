@@ -1,0 +1,74 @@
+@import "@/styles/theme/theme";
+
+.main {
+  margin-bottom: 40px;
+  width: 100%;
+
+  @include respond-width($m) {
+    width: 350px;
+  }
+
+  @include respond-width($xs) {
+    width: 300px;
+  }
+}
+
+.newsletterInput {
+  margin-top: 40px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-width($xs) {
+    margin-top: 20px;
+  }
+
+  label {
+    margin-top: 50px;
+    margin-bottom: 32px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+
+    @include respond-width($xs) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sendBtn {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid $black;
+    background-color: transparent;
+    flex: 1;
+
+    &:focus {
+      transition: all 0.3s ease;
+      border-color: $brown;
+      border-width: 2px;
+    }
+
+    @include respond-width($xs) {
+      width: 100%;
+    }
+  }
+
+  .helper {
+    margin-top: 16px;
+    text-align: left;
+
+    @include respond-width($xs) {
+      text-align: center;
+    }
+  }
+}

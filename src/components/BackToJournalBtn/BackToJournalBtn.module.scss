@@ -1,0 +1,16 @@
+@import "@/styles/theme/theme";
+
+.backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  fill: currentColor;
+  @include simpleTransition;
+  margin-bottom: 90px;
+
+  &:hover {
+    color: $brown;
+  }
+}

@@ -1,0 +1,7 @@
+@import "@/styles/theme/theme";
+
+.main {
+  @include respond-width($xl) {
+    padding: 0 20px;
+  }
+}

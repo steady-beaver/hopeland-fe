@@ -1,0 +1,74 @@
+@import 'src/styles/_media_queries.scss';
+
+.selected {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.notSelected {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+//  These styles work in combination with Preview.module.scss
+
+.frame {
+    padding: 100px 0;
+    height: max(100vh, 1124px);
+    height: max(100svh, 1124px);
+    position: relative;
+    // border: 1px solid orange;
+
+    @include respond-width($m) {
+        margin-bottom: 150px;
+        margin-right: 50px;
+        height: 900px;
+    }
+
+    @include respond-width($s) {
+        padding: 0 0;
+        height: 650px;
+    }
+
+    @include respond-width($xs) {
+        margin-right: 20px;
+        margin-bottom: 100px;
+    }
+}
+
+.menuPos {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    z-index: 10;
+
+    @include respond-width($l) {
+        right: auto;
+        bottom: 0;
+        left: 10px;
+    }
+
+    @include respond-width($s) {
+        right: auto;
+        bottom: auto;
+        left: 20px;
+        top: 50%;
+    }
+}
+
+.verticalPos {
+    position: absolute;
+    top: 50%;
+    padding-top: 5px;
+
+    @include respond-width($m) {
+        padding-top: 5px;
+    }
+
+    @include respond-width($s) {
+        padding-top: 15px;
+        top: 25%;
+    }
+}

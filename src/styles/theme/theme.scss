@@ -1,0 +1,10 @@
+@import "_typography";
+@import "_colors";
+@import "/src/styles/_media_queries";
+
+$duration: 7s;
+
+// @include simpleTransition;
+@mixin simpleTransition {
+    transition: all 0.3s ease;
+}

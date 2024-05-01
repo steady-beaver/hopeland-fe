@@ -1,0 +1,46 @@
+@import "@/styles/theme/theme";
+
+.mainSHS {
+  margin: 150px 50px;
+
+  @include respond-width($xs) {
+    margin: 25px 25px 60px;
+  }
+}
+
+.subtitleSHS {
+  margin-bottom: 30px;
+
+  @include respond-width($s) {
+    margin-bottom: 10px;
+  }
+}
+
+.titleSHS {
+  margin-bottom: 40px;
+
+  @include respond-width($s) {
+    margin-bottom: 20px;
+  }
+}
+
+.textSHS {
+  margin-bottom: 40px;
+  max-width: 1000px;
+
+  @include respond-width($s) {
+    margin-bottom: 20px;
+  }
+}
+
+.linkSHS {
+  @include simpleTransition;
+
+  &:hover {
+    color: $brown;
+  }
+
+  @include respond-width($s) {
+    font-size: 12px;
+  }
+}

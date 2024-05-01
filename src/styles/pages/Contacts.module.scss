@@ -1,0 +1,15 @@
+@import "@/styles/theme/theme";
+
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 200px;
+
+  @include respond-width($s) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 150px;
+  }
+}

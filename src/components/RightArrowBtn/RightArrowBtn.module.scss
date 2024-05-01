@@ -1,0 +1,18 @@
+@import "@/styles/theme/theme";
+
+.main {
+  border: none;
+  min-width: 30px;
+  aspect-ratio: 1/1;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    fill: $brown;
+  }
+
+  &[disabled] {
+    fill: $gray;
+  }
+}

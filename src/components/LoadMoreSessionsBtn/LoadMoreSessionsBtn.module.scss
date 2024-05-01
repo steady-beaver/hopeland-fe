@@ -1,0 +1,44 @@
+@import "@/styles/theme/theme";
+@import "src/styles/_media_queries.scss";
+
+.main {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  transform: scale(0.8);
+  // width: 185px;
+
+  &:hover {
+    color: $brown;
+  }
+
+  // @include respond-width($m) {
+  //     transform: scale(0.8);
+  // }
+}
+
+.btn {
+  display: inline-block;
+  padding: 25px 23px;
+  text-transform: uppercase;
+  // border: 1px solid red;
+  // transform: rotate(-3deg);
+}
+
+.circleAround {
+  position: absolute;
+  stroke: currentColor;
+  transform: scale(1.2);
+  left: 7%;
+}
+
+.disabled:hover {
+  color: currentColor;
+  cursor: inherit;
+}

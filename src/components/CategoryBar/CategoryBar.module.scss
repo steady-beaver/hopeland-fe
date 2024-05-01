@@ -1,0 +1,35 @@
+@import "@/styles/theme/theme";
+
+.categoryBar {
+  padding: 20px;
+  margin-bottom: 164px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+
+  @include respond-width($s) {
+    margin-bottom: 100px;
+  }
+
+  & span {
+    padding: 10px;
+    margin: 0 20px;
+    @include simpleTransition;
+
+    &:hover {
+      color: $brown;
+    }
+
+    @include respond-width($s) {
+      font-size: 12px;
+      margin: 0 0;
+      padding: 5px 10px;
+    }
+  }
+}

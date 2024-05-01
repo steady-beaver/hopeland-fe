@@ -1,0 +1,10 @@
+@import "@/styles/theme/theme";
+
+.newContainer {
+  width: min(1350px, 100vw);
+  margin: 0 auto;
+
+  // @include respond-width($m) {
+  //     padding: 0 20px;
+  // }
+}

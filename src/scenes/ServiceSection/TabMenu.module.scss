@@ -1,0 +1,50 @@
+@import "@/styles/theme/theme";
+
+.olStyles {
+  list-style-type: none;
+  counter-reset: list-counter;
+}
+
+.liItem {
+  position: relative;
+  border-bottom: 1px solid $black;
+  margin-top: 20px;
+  padding-left: 50px;
+  width: 350px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+
+  @include respond-width($s) {
+    width: 50px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $brown;
+    border-bottom: 1px solid $brown;
+  }
+
+  &:before {
+    content: counter(list-counter, decimal-leading-zero);
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+
+    font-family: ivymode;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+}
+
+.liText {
+  line-height: 16px;
+}

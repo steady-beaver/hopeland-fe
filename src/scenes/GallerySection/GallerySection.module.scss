@@ -1,0 +1,42 @@
+@import "@/styles/theme/theme";
+
+.frame {
+  height: 800px;
+  max-height: 70vh;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 200px auto 80px;
+
+  @include respond-width($s) {
+    margin: 150px auto 80px;
+  }
+}
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 35px;
+  overflow: visible;
+  height: 100%;
+  width: max-content;
+  position: relative;
+  bottom: 35px;
+
+  @include respond-width($s) {
+    gap: 20px;
+    bottom: 20px;
+  }
+}
+
+.row {
+  overflow: visible;
+
+  height: 40%;
+  display: flex;
+  gap: 35px;
+
+  @include respond-width($s) {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,120 @@
+@import 'src/styles/theme/theme.scss';
+
+
+.main {
+    max-width: 650px;
+    margin: 0 auto 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-width($s) {
+        margin: 0 auto 50px;
+    }
+}
+
+.presentation {
+    height: 400px;
+    width: 400px;
+    transition: all 0.15s ease;
+    position: relative;
+
+    &:hover {
+        transition: all 0.15s ease;
+        cursor: pointer;
+    }
+
+    &:hover .flower {
+        transition: all 0.15s ease;
+        transform: translate(-50%, 50%) rotate(-3deg);
+    }
+
+    &:hover .olaPicture {
+        transition: all 0.15s ease;
+        transform: translate(-50%, 50%) rotate(3deg);
+    }
+
+    .flower {
+        position: absolute;
+        bottom: 52%;
+        left: 30%;
+        transform: translate(-50%, 50%) rotate(4deg);
+    }
+
+    .olaPicture {
+        position: absolute;
+        bottom: 35%;
+        left: 57%;
+        transform: translate(-50%, 50%) rotate(-3deg);
+        padding: 12px 12px 30px;
+        background-color: $white;
+    }
+
+    .signature {
+        position: absolute;
+        bottom: -17px;
+        right: 35px;
+        transform: rotate(-5deg);
+    }
+}
+
+.shakePlant {
+    animation: shakePlant 1s ease-in-out;
+}
+
+.invitationText {
+    max-width: min(80vw, 400px);
+    margin-bottom: 30px;
+}
+
+@keyframes shakePlant {
+    0% {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-50%, 50%) rotate(3deg);
+    }
+
+    50% {
+        transform: translate(-50%, 50%) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(-50%, 50%) rotate(3deg);
+    }
+
+    100% {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+}
+
+.shakeOla {
+    animation: shakeOla 1s ease-in-out;
+}
+
+@keyframes shakeOla {
+    0% {
+        transform: translate(-50%, 50%) rotate(-3deg);
+    }
+
+    20% {
+        transform: translate(-50%, 50%) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(-50%, 50%) rotate(4deg);
+    }
+
+    75% {
+        transform: translate(-50%, 50%) rotate(-4deg);
+    }
+
+    100% {
+        transform: translate(-50%, 50%) rotate(-3deg);
+    }
+}
+
