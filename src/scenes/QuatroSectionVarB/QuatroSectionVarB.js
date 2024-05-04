@@ -11,7 +11,6 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
         <div className={styles.leftCol}>
           <div className={styles.primaryFrame}>
             <img src={srcPrimary} alt="Wedding" className={`${styles.imgPrimary} imgShadow fill`} />
-            {/* <Image src={srcPrimary} alt="Wedding" fill={true} className={`${styles.imgPrimary} imgShadow`} /> */}
             <img
               src={'/ornaments/brown-paper.png'}
               width={375}
@@ -19,13 +18,7 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
               className={styles.brownPaperOrnament}
               alt="Paper decoration"
             />
-            {/* <Image
-              src={'/ornaments/brown-paper.png'}
-              width={375}
-              height={600}
-              className={styles.brownPaperOrnament}
-              alt="Paper decoration"
-            /> */}
+
           </div>
 
           <p className={`${styles.p2} textS`}>{p2}</p>
@@ -35,7 +28,6 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
           <p className={`${styles.p1} textS`}>{p1}</p>
           <div className={styles.secondaryFrame}>
             <img src={srcSecondary} alt="Wedding" className="imgShadow fill" />
-            {/* <Image src={srcSecondary} alt="Wedding" fill={true} className="imgShadow" /> */}
           </div>
         </div>
       </div>

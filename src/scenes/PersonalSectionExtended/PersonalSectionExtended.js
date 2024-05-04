@@ -15,15 +15,15 @@ const PersonalSectionExtended = ({ className }) => {
     <div className={`${styles.main} ${className}`}>
       <div ref={ref} className={styles.presentation}>
         <Link href="/contacts">
-          <Image
-            src={bookSessionFlower}
+          <img
+            src='/ornaments/book-session-flower.png'
             className={`${styles.flower} ${inView ? styles.shakePlant : ''} `}
             width={464}
             height={594}
             alt="Portuguese flower"
           />
-          <Image
-            src={olaPhoto}
+          <img
+            src='/pictures/ola-profile.webp'
             className={`${styles.olaPicture} ${inView ? styles.shakeOla : ''} `}
             width={224}
             height={244}
