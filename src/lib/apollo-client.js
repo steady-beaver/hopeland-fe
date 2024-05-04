@@ -8,6 +8,7 @@ let client;
  */
 
 export function getApolloClient() {
+  console.log("Theehheheheheh", process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT);
   if (!client) {
     client = _createApolloClient();
   }
@@ -21,7 +22,7 @@ export function getApolloClient() {
 export function _createApolloClient() {
   return new ApolloClient({
     link: new HttpLink({
-      uri: removeLastTrailingSlash(process.env.WORDPRESS_GRAPHQL_ENDPOINT),
+      uri: removeLastTrailingSlash(process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT),
     }),
     cache: new InMemoryCache(),
     defaultOptions: {

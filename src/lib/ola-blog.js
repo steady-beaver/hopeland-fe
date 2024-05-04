@@ -1,7 +1,8 @@
 import { gql } from '@apollo/client';
-import { getApolloClient } from '@/lib/apollo-client';
+import { getApolloClient } from './apollo-client';
 
 export async function getPostsSegment(endCursor = null, categoryName = null) {
+  console.log('HHHHHEREERER')
   let condition = `where: {orderby: {field: DATE, order: DESC}}, after: "${endCursor}", first: 5`;
 
   if (categoryName) {

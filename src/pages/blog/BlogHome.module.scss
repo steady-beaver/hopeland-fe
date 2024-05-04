@@ -1,0 +1,113 @@
+@import "@/styles/theme/theme";
+
+.main {
+  margin: 124px auto;
+}
+
+.heading {
+  margin-bottom: 80px;
+
+  @include respond-width($s) {
+    margin-bottom: 50px;
+  }
+}
+
+// highlight blog
+.highlightBlog {
+  padding: 20px;
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  @include respond-width($s) {
+    flex-direction: column-reverse;
+  }
+
+  .textCol {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include respond-width($s) {
+      text-align: center;
+      gap: 10px;
+    }
+
+    .title {
+      margin-bottom: 4px;
+      @include simpleTransition;
+      display: inline-block;
+
+      &:hover {
+        color: $brown;
+      }
+    }
+
+    .category:after {
+      content: "";
+      width: 3px;
+      height: 3px;
+      display: inline-block;
+      margin: 2px 11px;
+      border-radius: 50%;
+      background-color: $black;
+    }
+
+    .excerpt {
+      @include respond-width($s) {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .imageFrame {
+    width: 100%;
+    aspect-ratio: 1.375/1;
+    max-width: 550px;
+    position: relative;
+
+    @include respond-width($s) {
+      width: 80vw;
+    }
+
+    .primaryFrame {
+      transform: rotate(5deg);
+      position: relative;
+      z-index: 2;
+    }
+
+    .grassOrnament {
+      position: absolute;
+      z-index: 3;
+      right: 10%;
+      top: -8%;
+      width: 15%;
+    }
+
+    .postcardBack {
+      position: relative;
+      z-index: 1;
+      transform: scale(1.07);
+    }
+  }
+}
+
+.wrapper {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 60px;
+
+  @include respond-width($m) {
+    grid-column-gap: 20px;
+  }
+
+  @include respond-width($xs) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 40px;
+  }
+}

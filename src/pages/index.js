@@ -17,7 +17,7 @@ export async function getStaticProps() {
   return {
     props: {
       recentThreePosts: [initialSegment?.nodes?.[0], initialSegment?.nodes?.[1], initialSegment?.nodes?.[2]],
-      imageStorageBase: process.env.WORDPRESS_UPLOADS_URL,
+      imageStorageBase: process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL,
       popularSessions,
     },
   };
