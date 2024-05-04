@@ -12,14 +12,7 @@ const TripleSection = ({ photoSrc, id }) => {
         <div className={styles.wrapper}>
           <div className={styles.colLeft}>
             <div className={styles.primaryImg}>
-              <Image src={photoSrc} fill={true} alt="Wedding" className={`${styles.primarySrc} imgShadow`} />
-              {/* <Image
-                src={'/ornaments/tape-ornament.png'}
-                width={100}
-                height={100}
-                className={styles.tapeOrnament}
-                alt="Paper tape decoration"
-              /> */}
+              <img src={photoSrc} alt="Wedding" className={`${styles.primarySrc} imgShadow fill`} />
             </div>
             <h3 className={`${styles.title} headingH3`}>
               Wedding photos that capture your story and emotions, lasting forever.

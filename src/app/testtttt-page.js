@@ -17,7 +17,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
+            <img
               src="/vercel.svg"
               alt="Vercel Logo"
               className={styles.vercelLogo}
@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
-        <Image
+        <img
           className={styles.logo}
           src="/next.svg"
           alt="Next.js Logo"

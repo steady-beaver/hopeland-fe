@@ -15,13 +15,13 @@ const TravelSection = ({ primaryImg, secondaryImg }) => {
       </div>
       <div className={styles.imgCanvas}>
         <div className={styles.primaryImg}>
-          <Image src={primaryImg} fill={true} alt="Wedding" className={`${styles.imageSrc} imgShadow`} />
+          <img src={primaryImg} alt="Wedding" className={`${styles.imageSrc} imgShadow fill`} />
         </div>
         <div className={styles.secondaryImg}>
-          <Image src={secondaryImg} fill={true} alt="Wedding" className={`${styles.imageSrc} imgShadow`} />
+          <img src={secondaryImg} alt="Wedding" className={`${styles.imageSrc} imgShadow fill`} />
         </div>
         <div className={styles.travelFlower}>
-          <Image
+          <img
             src={'/pictures/travel/travel-flower.png'}
             width={500}
             height={500}

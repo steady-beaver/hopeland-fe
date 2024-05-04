@@ -7,7 +7,7 @@ const Preview = ({ title, text, srcPrimary, srcSecondary, link, className, stopR
   return (
     <div className={`${styles.main} ${className}`}>
       <div className={styles.primaryImgFrame}>
-        <img src={srcPrimary} alt="Wedding" fill={true} className={`${styles.primaryImg} imgShadow fill`} />
+        <img src={srcPrimary} alt="Wedding" className={`${styles.primaryImg} imgShadow fill`} />
       </div>
       <div className={styles.secondaryImgFrame}>
         <img src={'/pictures/white-paper-1.png'}

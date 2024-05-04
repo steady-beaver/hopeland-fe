@@ -6,7 +6,7 @@ const Episode = ({ image, year, text }) => {
     <div className={styles.main}>
       {image && (
         <div className={styles.canvas}>
-          <Image src={image} fill={true} alt="Episode of Ola" className={`${styles.image} imgShadow`} />
+          <img src={image} alt="Episode of Ola" className={`${styles.image} imgShadow fill`} />
         </div>
       )}
       <div className={`${styles.year} textS`}>{year}</div>
