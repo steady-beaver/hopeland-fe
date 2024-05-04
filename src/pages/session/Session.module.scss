@@ -1,0 +1,9 @@
+@import 'src/styles/theme/theme.scss';
+
+.topImage {
+    margin-top: 150px;
+
+    @include respond-width($s) {
+        margin-top: 0;
+    }
+}

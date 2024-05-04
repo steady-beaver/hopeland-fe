@@ -8,7 +8,6 @@ let client;
  */
 
 export function getApolloClient() {
-  console.log("Theehheheheheh", process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT);
   if (!client) {
     client = _createApolloClient();
   }

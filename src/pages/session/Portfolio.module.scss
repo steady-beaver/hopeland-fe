@@ -1,0 +1,28 @@
+@import "@/styles/theme/theme";
+
+.main {
+  display: inherit;
+  margin-bottom: 150px;
+}
+
+.wrapper {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 60px;
+
+  @include respond-width($m) {
+    grid-column-gap: 20px;
+  }
+
+  @include respond-width($xs) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 40px;
+  }
+
+  h2 + div {
+    position: relative;
+    bottom: -5px;
+  }
+}
