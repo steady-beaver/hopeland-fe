@@ -17,7 +17,7 @@ export const getStaticPaths = async () => {
         categorySlug: category.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
@@ -32,6 +32,7 @@ export const getStaticProps = async ({ params }) => {
       allCategories,
       currentCategorySlug,
     },
+    revalidate: 60,
   };
 };
 

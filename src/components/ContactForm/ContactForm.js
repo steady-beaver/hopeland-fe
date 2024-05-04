@@ -2,9 +2,11 @@
 
 import SendBtn from '@/components/SendBtn/SendBtn';
 import { useState } from 'react';
-import Select from 'react-select';
 import styles from './ContactForm.module.scss';
 import Link from 'next/link';
+import dynamic from 'next/dynamic'
+
+const Select = dynamic(() => import("react-select"), { ssr: false });
 
 const sessionTypeOptions = [
   { value: '', label: 'Type of session' },

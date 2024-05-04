@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
         sessionSlug: item.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
@@ -31,6 +31,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       session,
     },
+    revalidate: 60,
   };
 };
 

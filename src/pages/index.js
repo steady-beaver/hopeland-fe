@@ -20,6 +20,7 @@ export async function getStaticProps() {
       imageStorageBase: process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL,
       popularSessions,
     },
+    revalidate: 60,
   };
 }
 

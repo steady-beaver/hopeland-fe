@@ -15,6 +15,7 @@ export async function getStaticProps() {
       initialSessionsData,
       popularSessions,
     },
+    revalidate: 60,
   };
 }
 
