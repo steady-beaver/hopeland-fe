@@ -30,6 +30,13 @@ a {
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 
+.fill {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+  inset: 0px;
+}
+
 .objectCover {
   object-fit: cover;
 }

@@ -14,12 +14,8 @@ const JournalMenu = ({ recentThreePosts, option, setOption }) => {
           <div className={styles.numeric}>{`0${i + 1}`}</div>
           <div className={styles.preview}>
             <div className={styles.smallImgFrame}>
-              <Image
-                className={styles.smallImg}
-                src={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}
-                fill={true}
-                alt="Alt TODO"
-              />
+              <img className={`${styles.smallImg} fill`}
+                src={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl} alt="" />
             </div>
             <div className={styles.textSide}>
               <div className={`${styles.categories} subtitleTiny `}>

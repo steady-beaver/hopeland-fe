@@ -10,14 +10,22 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
       <div className={styles.desktopLayout}>
         <div className={styles.leftCol}>
           <div className={styles.primaryFrame}>
-            <Image src={srcPrimary} alt="Wedding" fill={true} className={`${styles.imgPrimary} imgShadow`} />
-            <Image
+            <img src={srcPrimary} alt="Wedding" className={`${styles.imgPrimary} imgShadow fill`} />
+            {/* <Image src={srcPrimary} alt="Wedding" fill={true} className={`${styles.imgPrimary} imgShadow`} /> */}
+            <img
               src={'/ornaments/brown-paper.png'}
               width={375}
               height={600}
               className={styles.brownPaperOrnament}
               alt="Paper decoration"
             />
+            {/* <Image
+              src={'/ornaments/brown-paper.png'}
+              width={375}
+              height={600}
+              className={styles.brownPaperOrnament}
+              alt="Paper decoration"
+            /> */}
           </div>
 
           <p className={`${styles.p2} textS`}>{p2}</p>
@@ -26,7 +34,8 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
           <h3 className={`${styles.title} headingH3`}>{title}</h3>
           <p className={`${styles.p1} textS`}>{p1}</p>
           <div className={styles.secondaryFrame}>
-            <Image src={srcSecondary} alt="Wedding" fill={true} className="imgShadow" />
+            <img src={srcSecondary} alt="Wedding" className="imgShadow fill" />
+            {/* <Image src={srcSecondary} alt="Wedding" fill={true} className="imgShadow" /> */}
           </div>
         </div>
       </div>
@@ -36,17 +45,26 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
       <div className={styles.mobileLayout}>
         <div className={styles.topPartFrame}>
           <div className={styles.primaryFrame}>
-            <Image src={srcPrimary} alt="Wedding" width={260} height={400} className={styles.primaryImg} />
-            <Image
+            <img src={srcPrimary} alt="Wedding" width={260} height={400} className={styles.primaryImg} />7
+            {/* <Image src={srcPrimary} alt="Wedding" width={260} height={400} className={styles.primaryImg} /> */}
+            <img
               src={'/ornaments/brown-paper.png'}
               width={375}
               height={600}
               className={styles.brownPaperOrnament}
               alt="Paper decoration"
             />
+            {/* <Image
+              src={'/ornaments/brown-paper.png'}
+              width={375}
+              height={600}
+              className={styles.brownPaperOrnament}
+              alt="Paper decoration"
+            /> */}
           </div>
           <div className={styles.secondaryFrame}>
-            <Image src={srcSecondary} className={styles.secondaryImg} alt="Wedding" width={200} height={200} />
+            <img src={srcSecondary} className={styles.secondaryImg} alt="Wedding" width={200} height={200} />
+            {/* <Image src={srcSecondary} className={styles.secondaryImg} alt="Wedding" width={200} height={200} /> */}
           </div>
         </div>
         <div className={styles.bottomPartFrame}>

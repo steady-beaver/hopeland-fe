@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import bookSessionFlower from 'public/ornaments/book-session-flower.png';
-import olaPhoto from 'public/pictures/ola-profile.webp';
 import { useInView } from 'react-intersection-observer';
 import styles from './PersonalSection.module.scss';
 
@@ -14,15 +12,15 @@ const PersonalSection = ({ className }) => {
     <div className={`${styles.main} ${className}`}>
       <div ref={ref} className={styles.presentation}>
         <Link href="/contacts">
-          <Image
-            src={bookSessionFlower}
+          <img
+            src='/ornaments/book-session-flower.png'
             className={`${styles.flower} ${inView ? styles.shakePlant : ''} `}
             width={464}
             height={594}
             alt="Portuguese flower"
           />
-          <Image
-            src={olaPhoto}
+          <img
+            src='/pictures/ola-profile.webp'
             className={`${styles.olaPicture} ${inView ? styles.shakeOla : ''} `}
             width={224}
             height={244}

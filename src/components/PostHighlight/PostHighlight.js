@@ -1,5 +1,4 @@
 import ReadMoreBtn from '@/components/ReadMoreBtn/ReadMoreBtn';
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './PostHighlight.module.scss';
 
@@ -34,25 +33,9 @@ const PostHighlight = ({ post, imgBase, className }) => {
 
       <div className={styles.imageFrame}>
         <Link href={`/blog/${post.slug}`} className={styles.imgLink}>
-          <Image
-            src={`${imgBase}/${post.featuredImage.node.mediaDetails.file}`}
-            alt="Wedding"
-            fill={true}
-            className={`${styles.primaryFrame} objectCover imgShadow`}
-          />
-          <Image
-            src={'/ornaments/grass-ornament.svg'}
-            alt="Grass ornament"
-            width={45}
-            height={60}
-            className={styles.grassOrnament}
-          />
-          <Image
-            src={'/ornaments/old-postcard.png'}
-            alt="Old postcard ornament"
-            fill={true}
-            className={styles.postcardBack}
-          />
+          <img src={`${imgBase}/${post.featuredImage.node.mediaDetails.file}`} alt='' className={`${styles.primaryFrame} objectCover imgShadow fill`} />
+          <img src="/ornaments/grass-ornament.svg" alt='' className={styles.grassOrnament} />
+          <img src={'/ornaments/old-postcard.png'} alt='' className={styles.postcardBack} />
         </Link>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import bookSessionFlower from 'public/ornaments/book-session-flower.png';
-import olaPhoto from 'public/pictures/ola-profile.webp';
+import bookSessionFlower from '/public/ornaments/book-session-flower.png';
+import olaPhoto from '/public/pictures/ola-profile.webp';
 import { useInView } from 'react-intersection-observer';
 import styles from './PersonalSectionExtended.module.scss';
 import FollowMe from '@/components/FollowMe/FollowMe';

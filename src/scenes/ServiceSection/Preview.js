@@ -7,17 +7,15 @@ const Preview = ({ title, text, srcPrimary, srcSecondary, link, className, stopR
   return (
     <div className={`${styles.main} ${className}`}>
       <div className={styles.primaryImgFrame}>
-        <Image src={srcPrimary} alt="Wedding" fill={true} className={`${styles.primaryImg} imgShadow`} />
+        <img src={srcPrimary} alt="Wedding" fill={true} className={`${styles.primaryImg} imgShadow fill`} />
       </div>
       <div className={styles.secondaryImgFrame}>
-        <Image
-          src={'/pictures/white-paper-1.png'}
+        <img src={'/pictures/white-paper-1.png'}
           width={1000}
           height={1}
           className={styles.paperOrnament}
-          alt="Paper decoration"
-        />
-        <Image src={srcSecondary} alt="Wedding" fill={true} className={`${styles.secondaryImg} imgShadow`} />
+          alt="Paper decoration" />
+        <img src={srcSecondary} alt="Wedding" className={`${styles.secondaryImg} imgShadow fill`} />
       </div>
       <div className={styles.textSection}>
         <Link href={link} onMouseEnter={stopRotation} onMouseLeave={restoreRotation}>

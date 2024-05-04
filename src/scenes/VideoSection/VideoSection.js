@@ -1,7 +1,7 @@
 'use client';
-import CustomPlayBtn from 'public/icons/custom-play-icon.svg';
+import CustomPlayBtn from '/public/icons/custom-play-icon.svg';
 import { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayer from 'react-player/youtube';
 import styles from './VideoSection.module.scss';
 
 const VideoSection = ({ url }) => {

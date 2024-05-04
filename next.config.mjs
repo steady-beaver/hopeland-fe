@@ -9,6 +9,9 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    images: {
+        unoptimized: true,
+    },
 
     webpack(config) {
         config.module.rules.push({

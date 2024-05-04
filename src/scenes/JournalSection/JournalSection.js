@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useId, useState } from 'react';
 import JournalMenu from './JournalMenu';
 import styles from './JournalSection.module.scss';
+
 const JournalSection = ({ recentThreePosts, imgBase }) => {
   const [option, setOption] = useState('1'); // '1' | '2' | '3'
   const elemId = useId();
