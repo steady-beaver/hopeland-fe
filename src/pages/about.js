@@ -5,8 +5,6 @@ import OldSchoolTimeline from '@/scenes/OldSchoolTimeline/OldSchoolTimeline';
 import PersonalSection from '@/scenes/PersonalSection/PersonalSection';
 import QuatroSectionVarB from '@/scenes/QuatroSectionVarB/QuatroSectionVarB';
 import StandardHeaderSection from '@/scenes/StandardHeaderSection/StandardHeaderSection';
-// import Episode from '@/scenes/TimelineSection/Episode';
-// import TimelineSection from '@/scenes/TimelineSection/TimelineSection';
 import VideoSection from '@/scenes/VideoSection/VideoSection';
 
 export default function Home() {
@@ -25,9 +23,9 @@ export default function Home() {
 
         <QuatroSectionVarB
           header="Portugal"
-          title="Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus."
-          p1="Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc ornare varius fusce et. Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerissque netus."
-          p2="Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc ornare varius fusce et. Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerissque netus."
+          title=" My Haven of Tranquility and Inspiration."
+          p1="I chose this place as my home because I adore the tranquility it offers, the stunning nature, the warmth of its people, and the endless kilometers of breathtaking views, not just along the coast but everywhere you turn."
+          p2="Springtime in Portugal is especially magical, with an explosion of colors that never fails to amaze me. There's just so much that Portugal has to offer, and it's a place where I find true peace and inspiration."
           srcPrimary="/pictures/portugal-1.jpg"
           srcSecondary="/pictures/portugal-2.jpg"
         />

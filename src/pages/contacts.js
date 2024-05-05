@@ -13,17 +13,14 @@ export default function Contacts() {
         <ContactForm />
 
         <div className={styles.infoContainer}>
-          <InfoPoint title="time frame">
-            Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc
-            ornare varius fusce et. Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus.
+          <InfoPoint title="How do you manage the prepayment for your work?">
+            For photo sessions, a deposit of 50 euros is required to secure your booking. For wedding reservations, a deposit of 200 euros is required.
           </InfoPoint>
-          <InfoPoint title="confirmation">
-            Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc
-            ornare varius fusce et. Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus.
+          <InfoPoint title="What are your travel fees?">
+            For sessions within the Algarve region, there are no extra travel charges. However, for locations outside of the Algarve, travel fees are determined individually based on the location. Typically, this includes transportation costs and possibly one night's accommodation.
           </InfoPoint>
-          <InfoPoint title="contract">
-            Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc
-            ornare varius fusce et. Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus.
+          <InfoPoint title="Can we meet before booking?">
+            Absolutely! I love meeting with future couples. We can arrange to meet in person in Algarve or connect via Zoom or Google Meets. Another great idea is to get to know each other during a pre-wedding session.
           </InfoPoint>
         </div>
       </NewContainer>

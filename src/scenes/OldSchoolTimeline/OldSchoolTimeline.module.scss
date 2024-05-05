@@ -83,6 +83,7 @@
     }
     .imgFrame {
       transform: rotate(-3deg);
+      position: relative;
     }
   }
 
@@ -95,6 +96,7 @@
 
     .imgFrame {
       transform: rotate(3deg);
+      position: relative;
     }
 
     @include respond-width($xs) {
@@ -154,10 +156,38 @@
 
 .chapter_4 .ornament {
   width: 15%;
-  left: 37%;
+  right: 0%;
   bottom: 84%;
   transform: rotate(15deg);
   @include respond-width($xs) {
     left: 33%;
   }
+}
+
+// ===== labels =====
+
+.firstPassion {
+  position: absolute;
+  width: max-content;
+  top: -19%;
+  left: 19%;
+  // top: 45%;
+  // left: -1%;
+  transform: rotate(-10deg);
+  transform-origin: 50% 0%;
+}
+
+.perfectMoments {
+  position: absolute;
+  line-height: 30px;
+  top: -10%;
+  right: -15%;
+}
+
+.lifeChanging {
+  position: absolute;
+  width: max-content;
+  top: 0%;
+  left: 10%;
+  transform: rotate(-10deg);
 }

@@ -43,7 +43,7 @@ const Portfolio = ({ initialSessionsData, popularSessions }) => {
         <StandardHeaderSection
           subtitle="Portfolio "
           title="Stories"
-          text="Lorem ipsum dolor sit amet consectetur. Urna convallis leo scelerisque netus. Odio leo turpis non nunc ornare varius fusce et. "
+          text="Explore my portfolio filled with enchanting wedding photography. Specializing in couples, weddings, and elopement sessions in breathtaking destinations. I craft stunning images that beautifully narrate your love story."
         />
         <div className={styles.main}>
           <div className={styles.wrapper}>

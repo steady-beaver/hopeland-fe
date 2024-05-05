@@ -1,17 +1,18 @@
-@import 'src/styles/_media_queries.scss';
+@import "src/styles/_media_queries.scss";
 
 .main {
-    text-align: center;
-    font-size: 120px;
-    font-family: "Allison", cursive;
-    padding-top: 100px;
+  text-align: center;
+  font-size: 120px;
+  font-family: "Allison", cursive;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
-    @include respond-width($m) {
-        font-size: 70px;
-      }
-    
-      @include respond-width($s) {
-        font-size: 40px;
-        margin-bottom: 70px;
-      }
+  @include respond-width($m) {
+    font-size: 70px;
+  }
+
+  @include respond-width($s) {
+    font-size: 40px;
+    margin-bottom: 70px;
+  }
 }
