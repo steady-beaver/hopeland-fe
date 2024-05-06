@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import styles from './GallerySection.module.scss';
@@ -45,8 +45,8 @@ const getSlidesArray = (imgNodesArr) => {
 
 const GallerySection = ({ data }) => {
   const frameRef = useRef();
-  const imgNodesArr = getImgArray(data);
-  const slidesArr = getSlidesArray(imgNodesArr);
+  const imgNodesArr = useMemo(() => getImgArray(data), [data]);
+  const slidesArr = useMemo(() => getSlidesArray(imgNodesArr), [imgNodesArr]);
   const [index, setIndex] = useState(-1);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -54,7 +54,7 @@ const GallerySection = ({ data }) => {
 
   const handleMouseDown = (e) => {
     setIsDown(true);
-    setStartX(e.pageX - -frameRef.current.offsetLeft);
+    setStartX(e.pageX);
     setScrollLeft(frameRef.current.scrollLeft);
   };
 
@@ -70,21 +70,20 @@ const GallerySection = ({ data }) => {
   const handleMouseMove = (e) => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - frameRef.current.offsetLeft;
+    const x = e.pageX;
     const walk = x - startX;
     frameRef.current.scrollLeft = scrollLeft - walk;
   };
 
   const handleTouchStart = (e) => {
     setIsDown(true);
-    setStartX(e.touches[0].pageX - frameRef.current.offsetLeft);
+    setStartX(e.touches[0].pageX);
     setScrollLeft(frameRef.current.scrollLeft);
   };
 
   const handleTouchMove = (e) => {
     if (!isDown) return;
-    e.preventDefault();
-    const x = e.touches[0].pageX - frameRef.current.offsetLeft;
+    const x = e.touches[0].pageX;
     const walk = x - startX;
     frameRef.current.scrollLeft = scrollLeft - walk;
   };

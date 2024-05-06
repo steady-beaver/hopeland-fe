@@ -9,7 +9,7 @@ const Slider = ({ topText, title, bottomText, className, imageNode, slug }) => {
         <div className={styles.coverImage}>
           <CoveredImg imageNode={imageNode} />
         </div>
-        <span className={`${styles.upperText} subtitle letterSpacing `}>{topText}</span>
+        <span className={`${styles.upperText} subtitle letterSpacing uppercase`}>{topText}</span>
         <h2 className={`${styles.title} `}>{title}</h2>
         <p className={`${styles.bottomText} text `}>{bottomText}</p>
         <span className={styles.readMore}>READ MORE</span>
