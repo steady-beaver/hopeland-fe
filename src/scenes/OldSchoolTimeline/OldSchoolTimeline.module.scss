@@ -34,9 +34,9 @@
 
 .timeline {
   position: absolute;
-  width: 2px;
+  width: 1px;
   height: 100%;
-  background-color: $brown-light;
+  background-color: $black;
   left: 50%;
   top: 0;
   @include respond-width($xs) {
@@ -50,6 +50,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
+
+  .text {
+    font-size: 13px;
+    line-height: 21px;
+    padding-top: 10px;
+  }
 
   @include respond-width($s) {
     padding: 0 25px;
@@ -66,9 +72,9 @@
   &::after {
     content: "";
     width: 20px;
-    height: 2px;
+    height: 1px;
     top: 30px;
-    background-color: $brown-light;
+    background-color: $black;
     position: absolute;
     @include respond-width($xs) {
       width: 15px;

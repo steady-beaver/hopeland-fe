@@ -8,7 +8,7 @@ import StandardHeaderSection from '@/scenes/StandardHeaderSection/StandardHeader
 import TestimonialSection from '@/scenes/TestimonialSection/TestimonialSection';
 import TravelSection from '@/scenes/TravelSection/TravelSection';
 import TripleSection from '@/scenes/TripleSection/TripleSection';
-import VideoSection from '@/scenes/VideoSection/VideoSection';
+// import VideoSection from '@/scenes/VideoSection/VideoSection';
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
           srcSecondary="/pictures/service_couple_1x1.jpg"
         />
 
-        <VideoSection url="https://www.youtube.com/watch?v=gW6pa6bnyVU" />
+        {/* <VideoSection url="https://www.youtube.com/watch?v=gW6pa6bnyVU" /> */}
 
         <TripleSection photoSrc="/pictures/service-wedding.jpg" id="weddingSection" />
 
@@ -46,7 +46,7 @@ export default function Home() {
           srcSecondary="/pictures/service-elopement-2.jpg"
         />
 
-        <TravelSection primaryImg="/pictures/travel/travel-1.jpg" secondaryImg="/pictures/travel/travel-2.jpg" />
+        <TravelSection primaryImg="/pictures/travel/travel-11.jpg" secondaryImg="/pictures/travel/travel-22.jpg" />
 
         <FaqSection />
 

@@ -1,6 +1,7 @@
 import ReadMoreBtn from '@/components/ReadMoreBtn/ReadMoreBtn';
 import Link from 'next/link';
 import styles from './PostHighlight.module.scss';
+import Date from '@/components/Date/Date';
 
 const PostHighlight = ({ post, imgBase, className }) => {
   return (
@@ -16,7 +17,7 @@ const PostHighlight = ({ post, imgBase, className }) => {
                 {categoryObj.name}
               </span>
             ))}
-            <span>{post.date}</span>
+            <Date>{post.date}</Date>
           </div>
         </div>
         <div

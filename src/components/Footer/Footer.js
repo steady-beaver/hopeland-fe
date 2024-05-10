@@ -44,7 +44,7 @@ const Footer = () => {
                 <Link href="/session">Portfolio</Link>
               </li>
               <li>
-                <Link href="/">Blog</Link>
+                <Link href="/blog">Blog</Link>
               </li>
             </ul>
           </div>
@@ -56,10 +56,7 @@ const Footer = () => {
                 <Link href="/contacts">Contact</Link>
               </li>
               <li>
-                <Link href="#">Terms</Link>
-              </li>
-              <li>
-                <Link href="#">Privacy policy</Link>
+                <Link href="/privacy-policy">Privacy policy</Link>
               </li>
             </ul>
           </div>
