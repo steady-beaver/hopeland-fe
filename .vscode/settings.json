@@ -1,3 +1,4 @@
 {
-  "eslint.debug": true
+  "eslint.debug": true,
+  "cSpell.words": ["mailerlite"]
 }
