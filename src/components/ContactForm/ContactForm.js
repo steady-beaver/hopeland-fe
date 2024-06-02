@@ -4,9 +4,10 @@ import SendBtn from '@/components/SendBtn/SendBtn';
 import { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import Link from 'next/link';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import { useSnackbar } from 'notistack';
 
-const Select = dynamic(() => import("react-select"), { ssr: false });
+const Select = dynamic(() => import('react-select'), { ssr: false });
 
 const sessionTypeOptions = [
   { value: '', label: 'Type of session' },
@@ -23,7 +24,10 @@ const sourceOptions = [
   { value: 'Personal recommendation', label: 'Personal recommendation' },
 ];
 
+const WEB_3_FORM_TOKEN = '2b7cd9f6-0d52-4fa0-860e-af45b090313c';
+
 const ContactForm = () => {
+  const { enqueueSnackbar } = useSnackbar();
   const [formData, setFormData] = useState({
     name: '',
     source: '',
@@ -34,18 +38,55 @@ const ContactForm = () => {
     clientInstagram: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSelectChange = (name, selectedOption) => {
+    setFormData({ ...formData, [name]: selectedOption.value });
+  };
 
-    // console.log('submit');
-    // Handle form submission here
-    // console.log(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formElement = e.target;
+    const data = new FormData(formElement);
+    data.append('access_key', WEB_3_FORM_TOKEN);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      console.log(result);
+      enqueueSnackbar('Subscription successful!', { variant: 'success' });
+
+      // Clear form
+      setFormData({
+        name: '',
+        source: '',
+        email: '',
+        phone: '',
+        month: '',
+        sessionType: '',
+        clientInstagram: '',
+        message: '',
+      });
+    } catch (e) {
+      console.error(e);
+      enqueueSnackbar('Failed to submit form. Please try again later.', { variant: 'error' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -60,6 +101,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
         <div>
@@ -71,6 +113,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={loading}
           />
           <input
             type="tel"
@@ -80,6 +123,7 @@ const ContactForm = () => {
             value={formData.phone}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
         <div>
@@ -91,13 +135,14 @@ const ContactForm = () => {
             value={formData.month}
             onChange={handleChange}
             required
+            disabled={loading}
           />
           <Select
             options={sessionTypeOptions}
             name="sessionType"
-            value={formData.sessionType}
+            value={sessionTypeOptions.find(option => option.value === formData.sessionType)}
             placeholder="TYPE OF SESSION"
-            onChange={(val) => handleChange({ target: { name: 'sessionType', value: val } })}
+            onChange={(val) => handleSelectChange('sessionType', val)}
             unstyled
             classNamePrefix="CUSTOM"
             defaultValue=""
@@ -111,25 +156,19 @@ const ContactForm = () => {
                 lineHeight: '16px',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
-
                 width: '45%',
                 '@media screen and (max-width: 800px)': {
                   width: '100%',
                 },
               }),
-              control: (baseStyles, state) => {
-                // console.log('STATE', state);
-                return {
-                  ...baseStyles,
-                  borderBottom: `1px solid #140F0D`,
-                  paddingLeft: '4px',
-                  backgroundColor: state.isFocused ? '#F5EBE5' : '#E6DFD7',
-                };
-              },
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderBottom: `1px solid #140F0D`,
+                paddingLeft: '4px',
+                backgroundColor: state.isFocused ? '#F5EBE5' : '#E6DFD7',
+              }),
               valueContainer: (baseStyles) => ({
                 ...baseStyles,
-                // position: 'relative',
-                // bottom: '-3px',
               }),
               option: (baseStyles, state) => ({
                 ...baseStyles,
@@ -139,15 +178,16 @@ const ContactForm = () => {
               }),
             }}
             required
+            isDisabled={loading}
           />
         </div>
         <div>
           <Select
             options={sourceOptions}
             name="source"
-            value={formData.source}
+            value={sourceOptions.find(option => option.value === formData.source)}
             placeholder="WHERE DID YOU FIND ME"
-            onChange={(val) => handleChange({ target: { name: 'source', value: val } })}
+            onChange={(val) => handleSelectChange('source', val)}
             unstyled
             classNamePrefix="CUSTOM"
             defaultValue=""
@@ -161,25 +201,19 @@ const ContactForm = () => {
                 lineHeight: '16px',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
-
                 width: '45%',
                 '@media screen and (max-width: 800px)': {
                   width: '100%',
                 },
               }),
-              control: (baseStyles, state) => {
-                // console.log('STATE', state);
-                return {
-                  ...baseStyles,
-                  borderBottom: `1px solid #140F0D`,
-                  paddingLeft: '4px',
-                  backgroundColor: state.isFocused ? '#F5EBE5' : '#E6DFD7',
-                };
-              },
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderBottom: `1px solid #140F0D`,
+                paddingLeft: '4px',
+                backgroundColor: state.isFocused ? '#F5EBE5' : '#E6DFD7',
+              }),
               valueContainer: (baseStyles) => ({
                 ...baseStyles,
-                // position: 'relative',
-                // bottom: '-3px',
               }),
               option: (baseStyles, state) => ({
                 ...baseStyles,
@@ -189,6 +223,7 @@ const ContactForm = () => {
               }),
             }}
             required
+            isDisabled={loading}
           />
           <input
             type="text"
@@ -197,6 +232,7 @@ const ContactForm = () => {
             placeholder="YOUR INSTAGRAM PROFILE"
             value={formData.clientInstagram}
             onChange={handleChange}
+            disabled={loading}
           />
         </div>
         <div>
@@ -207,11 +243,12 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows="4"
+            disabled={loading}
           ></textarea>
         </div>
         <div className={styles.controls}>
-          <SendBtn type="submit">
-            <span className="textXS bold uppercase letterSpacing">Send</span>
+          <SendBtn type="submit" disabled={loading}>
+            <span className="textXS bold uppercase letterSpacing">{loading ? 'Sending...' : 'Send'}</span>
           </SendBtn>
           <span className="textXS">
             By sending the message you agree to our{' '}
