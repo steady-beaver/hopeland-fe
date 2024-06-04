@@ -1,159 +1,172 @@
-@import 'src/styles/_media_queries.scss';
+@import "src/styles/_media_queries.scss";
 
 .main {
-    width: calc(100% - 165px);
-    height: calc(100% - 200px);
-    right: 0px;
-    position: absolute;
+  width: calc(100% - 165px);
+  height: calc(100% - 200px);
+  right: 0px;
+  position: absolute;
 
-    @include respond-width($s) {
-        width: calc(100% - 100px);
-    }
+  @include respond-width($s) {
+    width: calc(100% - 100px);
+  }
 }
 
 .textSection {
-    position: absolute;
-    top: 50px;
-    right: 70px;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 70px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-width($l) {
+    margin-right: 30px;
+  }
+
+  @include respond-width($m) {
+    margin-right: 0;
+  }
+
+  & > *:first-child {
+    margin-bottom: 40px;
+
+    @include respond-width($m) {
+      margin-bottom: 15px;
+    }
+  }
+
+  & > *:last-child {
+    margin-top: 20px;
 
     @include respond-width($l) {
-        margin-right: 30px;
+      margin-right: 30px;
     }
 
     @include respond-width($m) {
-        margin-right: 0;
-    }
-
-    &>*:first-child {
-        margin-bottom: 40px;
-
-        @include respond-width($m) {
-            margin-bottom: 15px;
-        }
-    }
-
-    &>*:last-child {
-        margin-top: 20px;
-
-        @include respond-width($l) {
-            margin-right: 30px;
-        }
-
-        @include respond-width($m) {
-            margin-right: 0;
-        }
-
-        @include respond-width($s) {
-            margin-top: 0;
-        }
-    }
-
-    @include respond-width($l) {
-        width: 700px;
-        top: auto;
-        right: 0;
-        bottom: 0;
-    }
-
-    @include respond-width($m) {
-        width: min(700px, 100%);
-        bottom: -50px;
+      margin-right: 0;
     }
 
     @include respond-width($s) {
-        top: 57vw;
-        bottom: auto;
+      margin-top: 0;
     }
+  }
 
-    @include respond-width($xs) {
-        padding-right: 20px;
-    }
+  @include respond-width($l) {
+    width: 700px;
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include respond-width($m) {
+    width: min(700px, 100%);
+    bottom: -50px;
+  }
+
+  @include respond-width($s) {
+    top: 57vw;
+    bottom: auto;
+  }
+
+  @include respond-width($xs) {
+    padding-right: 20px;
+  }
 }
 
 .readMore {
-    align-self: flex-end;
+  align-self: flex-end;
 
-    @include respond-width($s) {
-        width: max-content;
-        position: absolute;
-        right: 50vw;
-        transform: translateX(75%) scale(0.8); // hmm
-        bottom: -100px;
-    }
+  @include respond-width($s) {
+    width: max-content;
+    position: absolute;
+    right: 50vw;
+    transform: translateX(75%) scale(0.8); // hmm
+    bottom: -100px;
+  }
+}
+
+.generalFrame {
+  @include respond-width($m) {
+    position: auto;
+    left: auto;
+  }
+  @include respond-width($s) {
+    position: relative;
+    left: 10%;
+  }
 }
 
 .primaryImgFrame {
-    position: absolute;
-    width: 430px;
-    aspect-ratio: 1/1.5;
-    top: 30px;
-    left: 50px;
-    transform: rotate(-2deg);
-    transform-origin: top right;
+  position: absolute;
+  width: 430px;
+  aspect-ratio: 1/1.5;
+  top: 30px;
+  left: 50px;
+  transform: rotate(-2deg);
+  transform-origin: top right;
 
-    @include respond-width($l) {
-        top: auto;
-        left: 155px;
-        width: 350px;
-    }
+  @include respond-width($l) {
+    top: auto;
+    left: 155px;
+    width: 350px;
+  }
 
-    @include respond-width($m) {
-        left: 100px;
-        width: 250px;
-    }
+  @include respond-width($m) {
+    left: 100px;
+    width: 250px;
+  }
 
-    @include respond-width($s) {
-        left: 0;
-        width: 40%;
-    }
+  @include respond-width($s) {
+    left: 0;
+    width: 40%;
+  }
 }
 
 .primaryImg {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .secondaryImgFrame {
-    position: absolute;
-    width: 360px;
-    aspect-ratio: 1/1;
-    bottom: 110px;
-    right: 380px;
-    transform: rotate(2deg);
+  position: absolute;
+  width: 360px;
+  aspect-ratio: 1/1;
+  bottom: 110px;
+  right: 380px;
+  transform: rotate(2deg);
 
-    @include respond-width($l) {
-        bottom: auto;
-        right: auto;
-        top: 100px;
-        left: 500px;
-    }
+  @include respond-width($l) {
+    bottom: auto;
+    right: auto;
+    top: 100px;
+    left: 500px;
+  }
 
-    @include respond-width($m) {
-        top: 60px;
-        left: 330px;
-        width: 250px;
-    }
+  @include respond-width($m) {
+    top: 60px;
+    left: 330px;
+    width: 250px;
+  }
 
-    @include respond-width($s) {
-        width: 40%;
-        left: 40%;
-    }
+  @include respond-width($s) {
+    width: 30%;
+    left: 35%;
+    top: 12vw;
+    bottom: auto;
+  }
 }
 
 .secondaryImg {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .paperOrnament {
-    position: absolute;
-    width: 400px;
-    aspect-ratio: 1/1;
-    left: 25%;
-    bottom: 13%;
+  position: absolute;
+  width: 400px;
+  aspect-ratio: 1/1;
+  left: 25%;
+  bottom: 13%;
 
-    @include respond-width($m) {
-        width: 300px;
-    }
+  @include respond-width($m) {
+    width: 300px;
+  }
 }

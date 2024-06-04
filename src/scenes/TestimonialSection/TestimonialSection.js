@@ -3,7 +3,7 @@ import styles from './TestimonialSection.module.scss';
 const TestimonialSection = () => {
   return (
     <div className={styles.main}>
-      <h3 className={`${''} headingH4`}>READY FOR THE RIGHT MOMENT</h3>
+      <h3 className={`${styles.title} headingH4`}>READY FOR THE RIGHT MOMENT</h3>
       <p className={` textS`}>
         We wanted to take a moment to express our heartfelt gratitude to you Ola, our amazing wedding photographer. Your
         talent and dedication captured the most beautiful moments of our special day, creating memories that we&rsquo;ll

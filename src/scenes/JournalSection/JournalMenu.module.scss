@@ -33,6 +33,12 @@
   line-height: 47.62px;
   padding-bottom: 8px;
   border-bottom: 1px solid $black;
+
+  @include respond-width($s) {
+    font-size: 27px;
+    line-height: 40px;
+    padding-bottom: 2px;
+  }
 }
 
 .preview {
@@ -40,6 +46,10 @@
   gap: 16px;
   height: 110px;
   padding-top: 30px;
+
+  @include respond-width($s) {
+    padding-top: 10px;
+  }
 }
 
 .smallImgFrame {

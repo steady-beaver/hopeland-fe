@@ -2,7 +2,7 @@
 
 .main {
   padding: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@
   }
 
   .textCol {
-    max-width: 420px;
+    max-width: 45vw;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -32,6 +32,11 @@
 
       &:hover {
         color: $brown;
+      }
+      @include respond-width($s) {
+        font-size: 21px;
+        line-height: 31px;
+        margin-bottom: 5px;
       }
     }
 
@@ -80,7 +85,7 @@
       z-index: 3;
       right: 10%;
       top: -8%;
-      width: 15%;
+      width: 18%;
     }
 
     .postcardBack {

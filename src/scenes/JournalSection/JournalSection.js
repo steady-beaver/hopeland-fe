@@ -24,26 +24,24 @@ const JournalSection = ({ recentThreePosts, imgBase }) => {
         </Link>
       </div>
 
-      <div className={styles.canvas}>
-        <PostHighlight
-          key={`third-${elemId}`}
-          post={recentThreePosts[2]}
-          imgBase={imgBase}
-          className={`${'3' === option ? styles.selected : styles.notSelected}`}
-        />
-        <PostHighlight
-          key={`second-${elemId}`}
-          post={recentThreePosts[1]}
-          imgBase={imgBase}
-          className={`${'2' === option ? styles.selected : styles.notSelected}`}
-        />
-        <PostHighlight
-          key={`first-${elemId}`}
-          post={recentThreePosts[0]}
-          imgBase={imgBase}
-          className={`${'1' === option ? styles.selected : styles.notSelected}`}
-        />
-      </div>
+      <PostHighlight
+        key={`third-${elemId}`}
+        post={recentThreePosts[2]}
+        imgBase={imgBase}
+        className={`${'3' === option ? styles.selected : styles.notSelected}`}
+      />
+      <PostHighlight
+        key={`second-${elemId}`}
+        post={recentThreePosts[1]}
+        imgBase={imgBase}
+        className={`${'2' === option ? styles.selected : styles.notSelected}`}
+      />
+      <PostHighlight
+        key={`first-${elemId}`}
+        post={recentThreePosts[0]}
+        imgBase={imgBase}
+        className={`${'1' === option ? styles.selected : styles.notSelected}`}
+      />
       <JournalMenu recentThreePosts={recentThreePosts} option={option} setOption={setOption} />
     </div>
   );

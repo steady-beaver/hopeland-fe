@@ -4,7 +4,7 @@ const InfoPoint = ({ title, children, extra }) => {
   return (
     <div className={styles.main}>
       <div className={styles.ornament} />
-      <div className={`${styles.title} subtitleStrong uppercase `}>{title}</div>
+      <div className={`${styles.title} uppercase `}>{title}</div>
       <div className={`textS ${styles.customSmallFont}`}>{children}</div>
       {extra && <div className={`textS ${styles.customSmallFont} ${styles.extra}`}>{extra}</div>}
     </div>

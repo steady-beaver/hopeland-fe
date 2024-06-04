@@ -12,7 +12,7 @@ const ArticlePreview = ({ imgNode, categories, date, title, excerpt, link }) => 
         </Link>
       </div>
       <div>
-        <h2 className={`${styles.title} headingH2 uppercase`}>
+        <h2 className={`headingH2 ${styles.title}  uppercase`}>
           <Link href={link}>{title} </Link>
         </h2>
 

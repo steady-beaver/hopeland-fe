@@ -18,7 +18,6 @@ const OldSchoolTimeline = () => {
         <div className={`${styles.chapter} ${styles.chapter_1}`}>
           <div className={styles.imgFrame} >
             <img src="/pictures/about-me/about-me-1.jpg" alt="Episode of Ola" className={`${styles.image} imgShadow`} />
-            <span className={`${styles.firstPassion} signature`}>first passion</span>
           </div>
           <div className={`${styles.year}`}>2002</div>
           <div className={`${styles.text}`}>
@@ -41,10 +40,6 @@ const OldSchoolTimeline = () => {
           <div className={styles.imgFrame}>
             {/* <img src="/ornaments/sun.svg" alt="Sun detail" className={styles.ornament} /> */}
             <img src="/pictures/about-me/about-me-2.jpg" alt="Episode of Ola" className={`${styles.image} imgShadow`} />
-            <div className={`${styles.perfectMoments} signature`}>
-              <span>perfect</span><br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moments</span>
-            </div>
           </div>
           <div className={`${styles.year}`}>2017</div>
           <div className={`${styles.text}`}>
@@ -58,7 +53,6 @@ const OldSchoolTimeline = () => {
           <div className={styles.imgFrame}>
             {/* <img src="/ornaments/bush.svg" alt="Bush detail" className={styles.ornament} /> */}
             <img src="/pictures/about-me/about-me-3.jpg" alt="Episode of Ola" className={`${styles.image} imgShadow`} />
-            <span className={`${styles.lifeChanging} signature`}>life-changing</span>
           </div>
           <div className={`${styles.year}`}>2018</div>
           <div className={`${styles.text}`}>

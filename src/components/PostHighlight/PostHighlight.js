@@ -8,7 +8,7 @@ const PostHighlight = ({ post, imgBase, className }) => {
     <div className={`${styles.main} ${className}`}>
       <div className={styles.textCol}>
         <div>
-          <h2 className={`${styles.title} headingH2 uppercase`}>
+          <h2 className={`headingH2 ${styles.title}  uppercase`}>
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
           </h2>
           <div className={`${styles.details} subtitleTiny uppercase`}>

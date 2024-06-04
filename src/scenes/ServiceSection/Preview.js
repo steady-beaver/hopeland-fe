@@ -6,16 +6,18 @@ import styles from './Preview.module.scss';
 const Preview = ({ title, text, srcPrimary, srcSecondary, link, className, stopRotation, restoreRotation }) => {
   return (
     <div className={`${styles.main} ${className}`}>
-      <div className={styles.primaryImgFrame}>
-        <img src={srcPrimary} alt="Wedding" className={`${styles.primaryImg} imgShadow fill`} />
-      </div>
-      <div className={styles.secondaryImgFrame}>
-        <img src={'/pictures/white-paper-1.png'}
-          width={1000}
-          height={1}
-          className={styles.paperOrnament}
-          alt="Paper decoration" />
-        <img src={srcSecondary} alt="Wedding" className={`${styles.secondaryImg} imgShadow fill`} />
+      <div className={styles.generalFrame}>
+        <div className={styles.primaryImgFrame}>
+          <img src={srcPrimary} alt="Wedding" className={`${styles.primaryImg} imgShadow fill`} />
+        </div>
+        <div className={styles.secondaryImgFrame}>
+          <img src={'/pictures/white-paper-1.png'}
+            width={1000}
+            height={1}
+            className={styles.paperOrnament}
+            alt="Paper decoration" />
+          <img src={srcSecondary} alt="Wedding" className={`${styles.secondaryImg} imgShadow fill`} />
+        </div>
       </div>
       <div className={styles.textSection}>
         <Link href={link} onMouseEnter={stopRotation} onMouseLeave={restoreRotation}>

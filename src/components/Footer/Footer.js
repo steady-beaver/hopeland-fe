@@ -24,7 +24,7 @@ const Footer = () => {
                 Sign up to newsletter
               </label>
               <Newsletter />
-              <span className={`${styles.helper} textXS`}>
+              <span className={`textXS ${styles.helper} `}>
                 By signing up to our newsletter you agree to our <Link href="/privacy-policy">privacy policy</Link>.
               </span>
             </div>

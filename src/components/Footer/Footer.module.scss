@@ -81,6 +81,12 @@
   label {
     margin-top: 50px;
     margin-bottom: 32px;
+    @include respond-width($s) {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14.4px;
+      letter-spacing: 0.2em;
+    }
   }
 
   .wrapper {
@@ -124,6 +130,10 @@
 
     @include respond-width($xs) {
       text-align: center;
+
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 12px;
     }
   }
 }

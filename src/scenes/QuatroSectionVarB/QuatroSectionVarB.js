@@ -37,7 +37,7 @@ const QuatroSectionVarB = ({ header, title, p1, p2, srcPrimary, srcSecondary, id
       <div className={styles.mobileLayout}>
         <div className={styles.topPartFrame}>
           <div className={styles.primaryFrame}>
-            <img src={srcPrimary} alt="Wedding" width={260} height={400} className={styles.primaryImg} />7
+            <img src={srcPrimary} alt="Wedding" width={260} height={400} className={styles.primaryImg} />
             <img
               src={'/ornaments/brown-paper.png'}
               width={375}

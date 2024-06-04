@@ -13,6 +13,11 @@
   &:hover {
     color: $brown;
   }
+  @include respond-width($s) {
+    font-size: 21px;
+    line-height: 31px;
+    margin-bottom: 5px;
+  }
 }
 
 .category:after {

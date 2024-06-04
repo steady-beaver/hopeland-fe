@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useState } from 'react';
 import Preview from './Preview';
 import model from './ServiceSection.model.js';

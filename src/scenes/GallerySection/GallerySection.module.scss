@@ -19,7 +19,8 @@
   gap: 35px;
   overflow: visible;
   height: 100%;
-  width: max-content;
+  // *** combo
+  width: fit-content;
   position: relative;
   bottom: 35px;
 
@@ -31,9 +32,10 @@
 
 .row {
   overflow: visible;
-
+  // *** combo
+  width: fit-content;
   height: 40%;
-  display: flex;
+  display: inline-flex;
   gap: 35px;
 
   @include respond-width($s) {
