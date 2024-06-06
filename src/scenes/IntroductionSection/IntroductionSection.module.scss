@@ -1,53 +1,53 @@
-@import 'src/styles/_media_queries.scss';
+@import "src/styles/_media_queries.scss";
 
 .main {
-    height: 650px;
-    background-image: url('/pictures/about-me-flower.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  height: 650px;
+  background-image: url("/pictures/about-me-flower.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 
-    width: 650px;
-    max-width: 100vw;
-    margin: 200px auto;
-    padding: 0 112px;
-    text-align: center;
+  width: 650px;
+  max-width: 100vw;
+  margin: 200px auto;
+  padding: 0 112px;
+  text-align: center;
 
-    @include respond-width($s) {
-        margin: 150px auto;
-    }
+  @include respond-width($s) {
+    margin: 60px auto;
+  }
 
-    .title {
-        font-size: 53px;
-        line-height: 78px;
-        text-transform: uppercase;
-        text-wrap: nowrap;
-
-        @include respond-width($s) {
-            font-size: 45px;
-        }
-    }
+  .title {
+    font-size: 53px;
+    line-height: 78px;
+    text-transform: uppercase;
+    text-wrap: nowrap;
 
     @include respond-width($s) {
-        width: 100%;
+      font-size: 45px;
     }
+  }
 
-    @include respond-width($xs) {
-        height: auto;
-        padding: 70px 20px 20px;
-    }
+  @include respond-width($s) {
+    width: 100%;
+  }
+
+  @include respond-width($xs) {
+    height: auto;
+    padding: 70px 20px 20px;
+  }
 }
 
 .linkBtn {
-    align-self: flex-end;
+  align-self: flex-end;
 
-    @include respond-width($s) {
-        align-self: center;
-    }
+  @include respond-width($s) {
+    align-self: center;
+  }
 }

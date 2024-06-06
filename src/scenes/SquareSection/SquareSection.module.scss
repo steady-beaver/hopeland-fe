@@ -8,7 +8,7 @@
   align-items: center;
 
   @include respond-width(600px) {
-    margin: 150px auto;
+    margin: 60px auto;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 20px;
   }

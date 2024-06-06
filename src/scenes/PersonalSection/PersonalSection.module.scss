@@ -1,125 +1,123 @@
-@import 'src/styles/theme/theme.scss';
-
+@import "src/styles/theme/theme.scss";
 
 .main {
-    max-width: 650px;
-    margin: 0 auto 200px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+  max-width: 650px;
+  margin: 0 auto 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 
-    @include respond-width($s) {
-        margin: 0 auto 150px;
-    }
+  @include respond-width($s) {
+    margin: 100px auto 60px;
+  }
 }
 
 .presentation {
-    height: 400px;
-    width: 400px;
+  height: 400px;
+  width: 400px;
+  transition: all 0.15s ease;
+  position: relative;
+
+  &:hover {
     transition: all 0.15s ease;
-    position: relative;
+    cursor: pointer;
+  }
 
-    &:hover {
-        transition: all 0.15s ease;
-        cursor: pointer;
-    }
+  &:hover .flower {
+    transition: all 0.15s ease;
+    transform: translate(-50%, 50%) rotate(-3deg);
+  }
 
-    &:hover .flower {
-        transition: all 0.15s ease;
-        transform: translate(-50%, 50%) rotate(-3deg);
-    }
+  &:hover .olaPicture {
+    transition: all 0.15s ease;
+    transform: translate(-50%, 50%) rotate(3deg);
+  }
 
-    &:hover .olaPicture {
-        transition: all 0.15s ease;
-        transform: translate(-50%, 50%) rotate(3deg);
-    }
+  .flower {
+    position: absolute;
+    bottom: 52%;
+    left: 30%;
+    transform: translate(-50%, 50%) rotate(4deg);
+  }
 
-    .flower {
-        position: absolute;
-        bottom: 52%;
-        left: 30%;
-        transform: translate(-50%, 50%) rotate(4deg);
-    }
+  .olaPicture {
+    position: absolute;
+    bottom: 35%;
+    left: 57%;
+    transform: translate(-50%, 50%) rotate(-3deg);
+    padding: 12px 12px 30px;
+    background-color: $white;
+  }
 
-    .olaPicture {
-        position: absolute;
-        bottom: 35%;
-        left: 57%;
-        transform: translate(-50%, 50%) rotate(-3deg);
-        padding: 12px 12px 30px;
-        background-color: $white;
-    }
-
-    .signature {
-        position: absolute;
-        bottom: -17px;
-        right: 35px;
-        transform: rotate(-5deg);
-    }
+  .signature {
+    position: absolute;
+    bottom: -17px;
+    right: 35px;
+    transform: rotate(-5deg);
+  }
 }
 
 .shakePlant {
-    animation: shakePlant 1s ease-in-out;
+  animation: shakePlant 1s ease-in-out;
 }
 
 .invitationText {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 @keyframes shakePlant {
-    0% {
-        transform: translate(-50%, 50%) rotate(0deg);
-    }
+  0% {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
 
-    25% {
-        transform: translate(-50%, 50%) rotate(3deg);
-    }
+  25% {
+    transform: translate(-50%, 50%) rotate(3deg);
+  }
 
-    50% {
-        transform: translate(-50%, 50%) rotate(-5deg);
-    }
+  50% {
+    transform: translate(-50%, 50%) rotate(-5deg);
+  }
 
-    75% {
-        transform: translate(-50%, 50%) rotate(3deg);
-    }
+  75% {
+    transform: translate(-50%, 50%) rotate(3deg);
+  }
 
-    100% {
-        transform: translate(-50%, 50%) rotate(0deg);
-    }
+  100% {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
 }
 
 .shakeOla {
-    animation: shakeOla 1s ease-in-out;
+  animation: shakeOla 1s ease-in-out;
 }
 
 @keyframes shakeOla {
-    0% {
-        transform: translate(-50%, 50%) rotate(-3deg);
-    }
+  0% {
+    transform: translate(-50%, 50%) rotate(-3deg);
+  }
 
-    20% {
-        transform: translate(-50%, 50%) rotate(-5deg);
-    }
+  20% {
+    transform: translate(-50%, 50%) rotate(-5deg);
+  }
 
-    50% {
-        transform: translate(-50%, 50%) rotate(4deg);
-    }
+  50% {
+    transform: translate(-50%, 50%) rotate(4deg);
+  }
 
-    75% {
-        transform: translate(-50%, 50%) rotate(-4deg);
-    }
+  75% {
+    transform: translate(-50%, 50%) rotate(-4deg);
+  }
 
-    100% {
-        transform: translate(-50%, 50%) rotate(-3deg);
-    }
+  100% {
+    transform: translate(-50%, 50%) rotate(-3deg);
+  }
 }
 
-
 .invitationText {
-    @include respond-width($s) {
-        padding: 0 50px;
-    }
+  @include respond-width($s) {
+    padding: 0 50px;
+  }
 }

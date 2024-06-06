@@ -3,6 +3,10 @@
 .main {
   display: inherit;
   margin-bottom: 150px;
+
+  @include respond-width($s) {
+    margin-bottom: 60px;
+  }
 }
 
 .wrapper {

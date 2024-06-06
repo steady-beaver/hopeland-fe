@@ -23,13 +23,13 @@
     @include respond-width($s) {
       text-align: center;
       gap: 10px;
+      max-width: 100%;
     }
 
     .title {
       margin-bottom: 4px;
       @include simpleTransition;
       display: inline-block;
-
       &:hover {
         color: $brown;
       }
@@ -37,6 +37,7 @@
         font-size: 21px;
         line-height: 31px;
         margin-bottom: 5px;
+        width: 100%;
       }
     }
 

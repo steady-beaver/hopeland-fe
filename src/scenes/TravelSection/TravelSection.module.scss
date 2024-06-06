@@ -4,7 +4,7 @@
   margin: 200px auto;
 
   @include respond-width($s) {
-    margin: 150px auto;
+    margin: 60px auto;
   }
 
   .textFrame {

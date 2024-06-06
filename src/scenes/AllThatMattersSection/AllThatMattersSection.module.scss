@@ -1,100 +1,98 @@
-@import 'src/styles/theme/theme.scss';
+@import "src/styles/theme/theme.scss";
 
 .main {
-    margin: 200px auto 0;
-    text-align: center;
+  margin: 200px auto 0;
+  text-align: center;
 
-    @include respond-width($s) {
-        margin: 150px auto 80px
-    }
+  @include respond-width($s) {
+    margin: 60px auto;
+  }
 }
 
 .canvas {
-    position: relative;
-    width: 100%;
-    height: 60vw;
-    max-height: 800px;
-
+  position: relative;
+  width: 100%;
+  height: 60vw;
+  max-height: 800px;
 }
 
 .frameOne {
-    position: absolute;
-    width: 33%;
-    aspect-ratio: 3/2;
-    left: 20%;
-    top: 20%;
-    transform: rotate(-6deg);
-    z-index: 3;
+  position: absolute;
+  width: 33%;
+  aspect-ratio: 3/2;
+  left: 20%;
+  top: 20%;
+  transform: rotate(-6deg);
+  z-index: 3;
 
-    @include respond-width($s) {
-        width: 45%;
-        left: 5%;
-    }
+  @include respond-width($s) {
+    width: 45%;
+    left: 5%;
+  }
 }
 
 .frameTwo {
-    position: absolute;
-    width: 22%;
-    aspect-ratio: 1/1;
-    left: 35%;
-    top: 40%;
-    transform: rotate(2deg);
-    z-index: 1;
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 1/1;
+  left: 35%;
+  top: 40%;
+  transform: rotate(2deg);
+  z-index: 1;
 
-    @include respond-width($s) {
-        top: 50%;
-        width: 25%;
-        left: 27%;
-    }
+  @include respond-width($s) {
+    top: 50%;
+    width: 25%;
+    left: 27%;
+  }
 }
 
 .frameThree {
-    position: absolute;
-    width: 22%;
-    aspect-ratio: 2/3;
-    right: 25%;
-    top: 10%;
-    transform: rotate(10deg);
-    z-index: 2;
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 2/3;
+  right: 25%;
+  top: 10%;
+  transform: rotate(10deg);
+  z-index: 2;
 
-    @include respond-width($s) {
-        width: 27%;
-        right: 23%;
-        top: 5%;
-    }
-
+  @include respond-width($s) {
+    width: 27%;
+    right: 23%;
+    top: 5%;
+  }
 }
 
 .frameLeaf {
-    position: absolute;
-    width: 33%;
-    aspect-ratio: 1/1;
-    right: 13%;
-    top: 30%;
+  position: absolute;
+  width: 33%;
+  aspect-ratio: 1/1;
+  right: 13%;
+  top: 30%;
 
-    @include respond-width($s) {
-        width: 47%;
-        right: 5%;
-        top: 25%;
-    }
+  @include respond-width($s) {
+    width: 47%;
+    right: 5%;
+    top: 25%;
+  }
 }
 
 .title {
-    font-size: 80px;
-    letter-spacing: 18px;
-    line-height: 120px;
-    margin-bottom: 40px;
+  font-size: 80px;
+  letter-spacing: 18px;
+  line-height: 120px;
+  margin-bottom: 40px;
 
-    @include respond-width($s) {
-        font-size: 38px;
-        line-height: 60px;
-    }
+  @include respond-width($s) {
+    font-size: 38px;
+    line-height: 60px;
+  }
 }
 
 .imageSrc {
-    // position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  // position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

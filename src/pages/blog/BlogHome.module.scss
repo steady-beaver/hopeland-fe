@@ -2,6 +2,10 @@
 
 .main {
   margin: 124px auto;
+
+  @include respond-width($s) {
+    margin: 60px auto 30px;
+  }
 }
 
 .heading {
