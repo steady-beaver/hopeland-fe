@@ -1,15 +1,20 @@
 @import "@/styles/theme/theme";
 
-.frame {
-  height: 800px;
-  max-height: 70vh;
-  width: 100%;
-  overflow-x: hidden;
+.main {
+  position: relative;
   margin: 200px auto 80px;
 
   @include respond-width($s) {
     margin: 60px auto;
   }
+}
+
+.frame {
+  height: 800px;
+  max-height: 70vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .canvas {
@@ -41,4 +46,35 @@
   @include respond-width($s) {
     gap: 20px;
   }
+}
+
+.arrow {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+
+  @include respond-width($xl) {
+    display: none;
+  }
+}
+
+.arrow:hover {
+  fill: $brown;
+  cursor: pointer;
+}
+.arrow.disabled:hover {
+  fill: inherit;
+  cursor: pointer;
+}
+
+.leftArrow {
+  right: calc(100% + 24px);
+}
+
+.rightArrow {
+  left: calc(100% + 24px);
 }

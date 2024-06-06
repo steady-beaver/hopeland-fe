@@ -5,6 +5,8 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import styles from './GallerySection.module.scss';
 import TileImg from './TileImg';
+import ArrowBack from '/public/icons/arrow-left.svg';
+import ArrowRight from '/public/icons/arrow-right.svg';
 
 const getImgArray = (dataObj) => {
   const outputArray = [];
@@ -51,6 +53,8 @@ const GallerySection = ({ data }) => {
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const handleMouseDown = (e) => {
     setIsDown(true);
@@ -92,31 +96,74 @@ const GallerySection = ({ data }) => {
     setIsDown(false);
   };
 
+  const handleScroll = () => {
+    if (frameRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = frameRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
+  };
+
+  const scrollLeftHandler = () => {
+    if (canScrollLeft) {
+      frameRef.current.scrollBy({ left: -frameRef.current.clientWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRightHandler = () => {
+    if (canScrollRight) {
+      frameRef.current.scrollBy({ left: frameRef.current.clientWidth, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+    frameRef.current.addEventListener('scroll', handleScroll);
+    return () => {
+      frameRef.current.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div
-      className={`${styles.frame} ${isDown ? styles.active : ''}`}
-      ref={frameRef}
-      onMouseDownCapture={handleMouseDown}
-      onMouseUpCapture={handleMouseUp}
-      onMouseMoveCapture={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      <div className={styles.canvas}>
-        <div className={`${styles.row} ${styles.upper}`}>
-          {imgNodesArr.map((item, i) => {
-            if (i % 2 == 0) return <TileImg key={'upper-' + i} imageNode={item} onClick={() => setIndex(i)} />;
-          })}
+    <div className={styles.main}>
+      <div
+        className={`${styles.frame} ${isDown ? styles.active : ''}`}
+        ref={frameRef}
+        onMouseDownCapture={handleMouseDown}
+        onMouseUpCapture={handleMouseUp}
+        onMouseMoveCapture={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div className={styles.canvas}>
+          <div className={`${styles.row} ${styles.upper}`}>
+            {imgNodesArr.map((item, i) => {
+              if (i % 2 == 0) return <TileImg key={'upper-' + i} imageNode={item} onClick={() => setIndex(i)} />;
+            })}
+          </div>
+          <div className={`${styles.row} ${styles.lower}`}>
+            {imgNodesArr.map((item, i) => {
+              if (i % 2 == 1) return <TileImg key={'lower-' + i} imageNode={item} onClick={() => setIndex(i)} />;
+            })}
+          </div>
         </div>
-        <div className={`${styles.row} ${styles.lower}`}>
-          {imgNodesArr.map((item, i) => {
-            if (i % 2 == 1) return <TileImg key={'lower-' + i} imageNode={item} onClick={() => setIndex(i)} />;
-          })}
-        </div>
+        <Lightbox index={index} slides={slidesArr} open={index >= 0} close={() => setIndex(-1)} />
       </div>
-      <Lightbox index={index} slides={slidesArr} open={index >= 0} close={() => setIndex(-1)} />
+
+      <div
+        className={`${styles.arrow} ${styles.leftArrow} ${!canScrollLeft ? styles.disabled : ''}`}
+        onClick={scrollLeftHandler}
+      >
+        <ArrowBack />
+      </div>
+      <div
+        className={`${styles.arrow} ${styles.rightArrow} ${!canScrollRight ? styles.disabled : ''}`}
+        onClick={scrollRightHandler}
+      >
+        <ArrowRight />
+      </div>
     </div>
   );
 };
