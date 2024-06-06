@@ -52,7 +52,7 @@ const Portfolio = ({ initialSessionsData, popularSessions }) => {
                 <ArticlePreview
                   key={item.slug}
                   imgNode={item.featuredImage.node}
-                  categories={item?.sessionConfigs?.sessionType?.nodes ?? []}
+                  categories={item?.main.sessionType?.nodes ?? []}
                   date={item.date}
                   title={item.title}
                   link={`/session/${item.slug}`}
