@@ -2,10 +2,22 @@
 
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 20px 45px;
   color: $white;
   position: relative;
+
+  @include respond-width($s) {
+    padding: 20px 20px;
+  }
+
+  .logo {
+    width: 214px;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
 
   & svg {
     cursor: pointer;
@@ -110,6 +122,8 @@
   .hamburgerIcon {
     fill: $black;
     transition: fill 0.3s ease;
+    position: relative;
+    top: 4px;
 
     &:hover {
       fill: $brown-dark;

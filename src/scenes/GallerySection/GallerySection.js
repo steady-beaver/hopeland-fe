@@ -46,7 +46,7 @@ const getSlidesArray = (imgNodesArr) => {
 };
 
 const GallerySection = ({ data }) => {
-  const frameRef = useRef();
+  const frameRef = useRef(null);
   const imgNodesArr = useMemo(() => getImgArray(data), [data]);
   const slidesArr = useMemo(() => getSlidesArray(imgNodesArr), [imgNodesArr]);
   const [index, setIndex] = useState(-1);
@@ -118,9 +118,12 @@ const GallerySection = ({ data }) => {
 
   useEffect(() => {
     handleScroll();
-    frameRef.current.addEventListener('scroll', handleScroll);
+    const currentFrame = frameRef.current;
+    currentFrame.addEventListener('scroll', handleScroll);
     return () => {
-      frameRef.current.removeEventListener('scroll', handleScroll);
+      if (currentFrame) {
+        currentFrame.removeEventListener('scroll', handleScroll);
+      }
     };
   }, []);
 
@@ -140,12 +143,12 @@ const GallerySection = ({ data }) => {
         <div className={styles.canvas}>
           <div className={`${styles.row} ${styles.upper}`}>
             {imgNodesArr.map((item, i) => {
-              if (i % 2 == 0) return <TileImg key={'upper-' + i} imageNode={item} onClick={() => setIndex(i)} />;
+              if (i % 2 === 0) return <TileImg key={'upper-' + i} imageNode={item} onClick={() => setIndex(i)} />;
             })}
           </div>
           <div className={`${styles.row} ${styles.lower}`}>
             {imgNodesArr.map((item, i) => {
-              if (i % 2 == 1) return <TileImg key={'lower-' + i} imageNode={item} onClick={() => setIndex(i)} />;
+              if (i % 2 === 1) return <TileImg key={'lower-' + i} imageNode={item} onClick={() => setIndex(i)} />;
             })}
           </div>
         </div>

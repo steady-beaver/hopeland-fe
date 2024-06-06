@@ -9,6 +9,7 @@ import CloseIcon from '/public/icons/close-new.svg';
 import HamburgerIcon from '/public/icons/hamburger-new.svg';
 import { useState } from 'react';
 import styles from './Nav.module.scss';
+import SmileLogo from '/public/icons/smile-logo.png'
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,7 +56,13 @@ const Nav = () => {
           </div>
         </>
       ) : (
-        <HamburgerIcon className={styles.hamburgerIcon} onClick={(e) => toggleMenu(e)} />
+        <>
+          <Link href="/">
+            <img src={SmileLogo.src} alt="Smile Logo" className={styles.logo} />
+          </Link>
+
+          <HamburgerIcon className={styles.hamburgerIcon} onClick={(e) => toggleMenu(e)} />
+        </>
       )}
     </nav>
   );
