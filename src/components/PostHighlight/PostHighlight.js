@@ -3,12 +3,12 @@ import Link from 'next/link';
 import styles from './PostHighlight.module.scss';
 import Date from '@/components/Date/Date';
 
-const PostHighlight = ({ post, imgBase, className }) => {
+const PostHighlight = ({ post, imgBase, className, stopRotation, restoreRotation }) => {
   return (
     <div className={`${styles.main} ${className}`}>
       <div className={styles.textCol}>
         <div>
-          <h2 className={`headingH2 ${styles.title}  uppercase`}>
+          <h2 onMouseEnter={stopRotation} onMouseLeave={restoreRotation} className={`headingH2 ${styles.title}  uppercase`}>
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
           </h2>
           <div className={`${styles.details} subtitleTiny uppercase`}>
@@ -27,12 +27,12 @@ const PostHighlight = ({ post, imgBase, className }) => {
           }}
         />
 
-        <div>
+        <div onMouseEnter={stopRotation} onMouseLeave={restoreRotation} className={styles.test} >
           <ReadMoreBtn to={`/blog/${post.slug}`} />
         </div>
       </div>
 
-      <div className={styles.imageFrame}>
+      <div className={styles.imageFrame} onMouseEnter={stopRotation} onMouseLeave={restoreRotation}>
         <Link href={`/blog/${post.slug}`} className={styles.imgLink}>
           <img src={`${imgBase}/${post.featuredImage.node.mediaDetails.file}`} alt='' className={`${styles.primaryFrame} objectCover imgShadow fill`} />
           <img src="/ornaments/grass-ornament.svg" alt='' className={styles.grassOrnament} />

@@ -18,7 +18,7 @@ const ServiceSection = () => {
 
         setOption(serviceTypes[nextIndex]);
       }
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isPaused, option]);
