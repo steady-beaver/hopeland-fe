@@ -24,8 +24,6 @@ const sourceOptions = [
   { value: 'Personal recommendation', label: 'Personal recommendation' },
 ];
 
-const WEB_3_FORM_TOKEN = '2b7cd9f6-0d52-4fa0-860e-af45b090313c';
-
 const ContactForm = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [formData, setFormData] = useState({
@@ -55,7 +53,7 @@ const ContactForm = () => {
 
     const formElement = e.target;
     const data = new FormData(formElement);
-    data.append('access_key', WEB_3_FORM_TOKEN);
+    data.append('access_key', process.env.NEXT_PUBLIC_WEB_3_FORM_TOKEN);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
