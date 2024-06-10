@@ -2,10 +2,10 @@ import { gql } from '@apollo/client';
 import { getApolloClient } from './apollo-client';
 
 export async function getPostsSegment(endCursor = null, categoryName = null) {
-  let condition = `where: {orderby: {field: DATE, order: DESC}}, after: "${endCursor}", first: 5`;
+  let condition = `where: {orderby: {field: DATE, order: DESC}}, after: "${endCursor}", first: 10`;
 
   if (categoryName) {
-    condition = `where: {orderby: {field: DATE, order: DESC}, categoryName: "${categoryName}"}, after: "${endCursor}", first: 5`;
+    condition = `where: {orderby: {field: DATE, order: DESC}, categoryName: "${categoryName}"}, after: "${endCursor}", first: 10`;
   }
 
   const allBlogPostsQuery = gql`
@@ -140,7 +140,7 @@ export async function getAllCategories() {
 // ===============   SESSIONS ===============
 
 export async function getSessionsSegment(endCursor = null) {
-  const condition = `where: {orderby: {field: DATE, order: DESC}}, after: "${endCursor}", first: 5`;
+  const condition = `where: {orderby: {field: DATE, order: DESC}}, after: "${endCursor}", first: 10`;
 
   const sessionsSegmentQuery = gql`
     query getSessionsSegment {
@@ -169,7 +169,7 @@ export async function getSessionsSegment(endCursor = null) {
             }
           }
           main {
-            sessionType {
+            type {
               nodes {
                 name
                 slug
@@ -824,7 +824,7 @@ export async function getSingleSession(slug) {
         }
         main {
           description
-          sessionType {
+          type {
             nodes {
               name
               slug
@@ -961,17 +961,16 @@ export async function getSingleSession(slug) {
   return session;
 }
 
-//  ======== type | Sessions categories
-//
-// type popular id   -->   dGVybTo5
-//
+
+// ImPORTANT 
+// Main taxonomy field is called type. it rep[resents session-type
+// it is done because we cannot have 2 entities that are called the same session-type
 
 export async function getPopularSessions() {
   const commonTypesSessions = gql`
     query getSessionSlugs {
-      types(where: { include: "dGVybTo5" }) {
-        nodes {
-          sessions {
+      sessionType(id: "feature", idType: SLUG) {
+      sessions {
             nodes {
               title
               uri
@@ -999,7 +998,7 @@ export async function getPopularSessions() {
                 description
                 heroLabel
                 order
-                sessionType {
+                type {
                   nodes {
                     name
                     slug
@@ -1008,14 +1007,12 @@ export async function getPopularSessions() {
               }
             }
           }
-        }
       }
     }
   `;
 
   const apolloClient = getApolloClient();
   const res = await apolloClient.query({ query: commonTypesSessions });
-  const commonSessions = res.data.types.nodes[0].sessions.nodes;
-
+  const commonSessions = res.data.sessionType.sessions.nodes;
   return commonSessions;
 }

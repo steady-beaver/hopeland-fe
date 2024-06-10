@@ -42,7 +42,7 @@ const Session = ({ session }) => {
         <NewContainerPatch>
           <div className={styles.main}>
             <StandardHeaderSection
-              subtitle={session?.main?.sessionType?.nodes?.[0]?.name ?? 'Category'}
+              subtitle={session?.main?.type?.nodes?.[0]?.name ?? 'Category'}
               title={session?.title}
               text={session?.main?.description}
             />

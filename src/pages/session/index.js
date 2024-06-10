@@ -34,9 +34,6 @@ const Portfolio = ({ initialSessionsData, popularSessions }) => {
     pageInfo: initialSessionsData.pageInfo,
   });
 
-  // console.log('seSSions: ', sessions);
-  // console.log('popularSessions: ', popularSessions);
-
   return (
     <Layout>
       <NewContainer>
@@ -52,7 +49,7 @@ const Portfolio = ({ initialSessionsData, popularSessions }) => {
                 <ArticlePreview
                   key={item.slug}
                   imgNode={item.featuredImage.node}
-                  categories={item?.main.sessionType?.nodes ?? []}
+                  categories={item?.main.type?.nodes ?? []}
                   date={item.date}
                   title={item.title}
                   link={`/session/${item.slug}`}
